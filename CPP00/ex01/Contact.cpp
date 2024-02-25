@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 20:05:54 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/02/24 20:34:55 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/02/25 12:06:22 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,16 @@ static void print_string(const std::string &str){
 	}
 }
 
-void	Contact::_print(){
+void	Contact::_printList(){
+	std::cout<<'|';
+	print_string(_index);
 	std::cout<<'|';
 	print_string(_first_name);
 	strd::cout<<'|';
 	
 }
 
-void	Contact::_display(){
+void	Contact::_displayContact(){
 	std::cout<<_first_name << std::endl;
 	
 }
