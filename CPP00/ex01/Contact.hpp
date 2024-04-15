@@ -1,26 +1,44 @@
-#ifndef CONTACT_H
-# define CONTACT_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/24 19:22:35 by ilouacha          #+#    #+#             */
+/*   Updated: 2024/04/16 00:37:27 by ilham_oua        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
+#include <iostream>
+#include <iomanip> 
+
 
 class   Contact{
     public :
-		Contact(std::string fN,
-                std::string lN,
-                std::string nN,
-                std::string pNum,
-                std::string secret) : _firstName(fN), 
-                                    _lastName(lN),
-                                    _nickName(nN),
-                                    _phoneNumber(pNum),
-                                    _darkestSecret(secret);
+		Contact();
+		Contact(std::string first_name,
+				std::string last_name,
+				std::string nickname,
+				std::string	phone_number,
+				std::string darkest_secret,
+				int			index);
+		_displayContact();
+		_printList();
 		~Contact(void);
+		std::string	_get_first(){
+			return this->_first_name;
+		}
 	private :
-		std::string	_firstName;
-		std::string	_lastName;
-		std::string	_nickName;
-		std::string	_phoneNumber;
-		std::string	_darkestSecret;
-
-    	static int	_nbrContact;
+		std::string	_first_name;
+		std::string	_last_name;
+		std::string	_nickname;
+		std::string	_phone_number;
+		std::string	_darkest_secret;
+		int			_index;
 	
 };
 
