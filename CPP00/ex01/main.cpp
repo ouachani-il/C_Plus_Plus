@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 19:30:37 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/04/16 00:11:41 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/04/16 10:20:40 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #include <iostream>
 
 int main(void){
-	PhoneBook   phoneBook;
-	std::string cmd = "";
+	PhoneBook	phoneBook;
+	std::string	cmd = "";
 
 	
 	while (cmd != "EXIT")

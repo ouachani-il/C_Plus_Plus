@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 19:22:35 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/04/16 00:56:58 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/04/16 10:20:00 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #include <iomanip> 
 
 
-class   Contact{
-    public :
+class	Contact{
+	public :
 		Contact();
 		Contact(std::string first_name,
 				std::string last_name,
