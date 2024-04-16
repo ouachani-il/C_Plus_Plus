@@ -6,7 +6,7 @@
 /*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 19:22:35 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/04/16 00:37:27 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/04/16 00:56:58 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ class   Contact{
 		_printList();
 		~Contact(void);
 		std::string	_get_first(){
-			return this->_first_name;
+			return this->_firstName;
 		}
 	private :
-		std::string	_first_name;
-		std::string	_last_name;
-		std::string	_nickname;
-		std::string	_phone_number;
-		std::string	_darkest_secret;
+		std::string	_firstName;
+		std::string	_lastName;
+		std::string	_nickName;
+		std::string	_phoneNumber;
+		std::string	_darkestSecret;
 		int			_index;
 	
 };
