@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 19:30:37 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/04/16 10:20:40 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:27:07 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,21 @@ int main(void){
 	PhoneBook	phoneBook;
 	std::string	cmd = "";
 
-	
+	phoneBook.init();
 	while (cmd != "EXIT")
 	{
-		switch (cmd)
+		if (cmd == "ADD")
 		{
-		case "ADD":
-			phoneBook.Add();
-			break;
-		case "SEARCH":
-			phoneBook.Search();
-			break;
-		case "EXIT":
-			exit();
-		break;
-	
-	default:
-		break;
-	}
+			phoneBook.addContact();
+		}
+		else if (cmd == "SEARCH")
+		{
+			phoneBook.printContacts();
+			phoneBook.searchContact();
+		}
+
+		std::cout << ">" << std::flush;
+		std::cin >> cmd;
 	}
 	return 0;
 }

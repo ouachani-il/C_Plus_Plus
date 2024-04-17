@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 19:22:35 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/04/16 10:20:00 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:17:38 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,19 @@
 #define CONTACT_HPP
 
 #include <iostream>
-#include <iomanip> 
+#include <iomanip>
 
 
 class	Contact{
 	public :
 		Contact();
-		Contact(std::string first_name,
-				std::string last_name,
-				std::string nickname,
-				std::string	phone_number,
-				std::string darkest_secret,
-				int			index);
-		_displayContact();
-		_printList();
 		~Contact(void);
-		std::string	_get_first(){
-			return this->_firstName;
-		}
+		
+		void	display(void) const;
+		void	viewContact(void) const;
+		void	setIndex(int i);
+		void	init(void);
+		//printList();
 	private :
 		std::string	_firstName;
 		std::string	_lastName;
@@ -40,6 +35,8 @@ class	Contact{
 		std::string	_darkestSecret;
 		int			_index;
 	
+		std::string		_getStr(std::string str) const;
+		static void		_printStr(const std::string str);
 };
 
 #endif

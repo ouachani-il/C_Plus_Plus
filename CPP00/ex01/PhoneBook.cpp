@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:45:51 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/04/16 10:20:16 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:26:48 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,96 +14,65 @@
 #include "Contact.hpp"
 
 PhoneBook::PhoneBook(void){
-		 std::cout << "constructor called" << std::endl;
-	 
 }
 
 PhoneBook::~PhoneBook(void){
-		std::cout << "Destructor called" << std::endl;
 }
 
-PhoneBook::Add(){
-		
+void	PhoneBook::addContact(void){
+	static int	i;
+
+	this->_contacts[i % 8].init();
+	this->_contacts[i % 8].setIndex(i % 8);
+	i++;
+	return ;
 }
-PhoneBook::Search(){
-		
-}
-PhoneBook::Delete(){
-	
-}
+void	PhoneBook::searchContact(void) const{
+	int		sindex = -1;
+	bool	nvalid = false;
 
-int main()
-{
-	PhoneBook	my_phoneBook;
-	Contact		old_contact;
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string phone_number;
-	std::string darkest_secret;
-	std::string str_index;
-
-}
-
-int main() {
-
-	std::string str;
-
-	PhoneBook phonebook;
-	Contact contact;
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string phone_number;
-	std::string darkest_secret;
-	std::string str_index;
-	int index;
-	int count = 0;
-	while (!std::cin.eof()) {
-		std::cin >> str;
-		if (str == "ADD") {
-			std::cout << "donnez le first name" << std::endl;
-
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			getline(std::cin, first_name);
-			std::cout << "donnez le last name" << std::endl;
-
-			getline(std::cin, last_name);
-			std::cout << "donnez le nick name" << std::endl;
-			getline(std::cin, nickname);
-			std::cout << "donnez le phone number" << std::endl;
-			getline(std::cin, phone_number);
-			while (ft_check_number(phone_number)) {
-				std::cout << "Donnez un nombre valide" << std::endl;
-				getline(std::cin, phone_number);
-			}
-
-			std::cout << "donnez le darket_secret" << std::endl;
-			getline(std::cin, darkest_secret);
-			phonebook.add(Contact(first_name, last_name, nickname, phone_number,
-														darkest_secret));
-			if (count < 7)
-				count++;
-		} else if (str == "SEARCH") {
-			phonebook.print_phone_book(count);
-			if (count == 0) {
-				std::cout << "phonebook vide" << std::endl;
-			} else {
-				std::cout << "donnez un indice valide" << std::endl;
-				std::cin >> str_index;
-				index = atoi(str_index.c_str());
-				if (ft_check_number(str_index) || index <= 0 || index > count) {
-					if (std::cin.eof())
-						std::cout << "saisie vide" << std::endl;
-					else
-						std::cout << "indice invalid" << std::endl;
-					// return ;
-				} else {
-					phonebook.search(index - 1).display();
-				}
-			}
-		} else if (str == "EXIT") {
-			break;
+	do
+	{
+		std::cout << "Please enter the index of the contact to display :" << std::endl;
+		std::cin >> sindex;
+		if (std::cin.good() && (sindex >= 0 && sindex <= 7))
+			nvalid = true;
+		else{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+			std::cout << "Please enter a valid contact number !" << std::endl;
 		}
+	} while (!nvalid);
+	this->_contacts[sindex].display();
+	
+	return ;
+}
+
+void	PhoneBook::printContacts(void) const{
+	std::cout << "|";
+	std::cout << std::setw(10) << "index" << std::flush;
+	std::cout << "|";
+	std::cout << std::setw(10) << "First Name" << std::flush;
+	std::cout << "|";
+	std::cout << std::setw(10) << "Last Name" << std::flush;
+	std::cout << "|";
+	std::cout << std::setw(10) << "Nickname" << std::flush;
+	std::cout << "|";
+
+	for (size_t i = 0; i < 8; i++){
+		this->_contacts[i].viewContact();
 	}
+	return ;
+}
+void	PhoneBook::init(){
+	std::cout << std::endl;
+	std::cout << "Welcome to the Awesome PhoneBook !" << std::endl;
+	std::cout << std::endl;
+	std::cout << "-----------------How it works ?-----------------" << std::endl;
+	std::cout << " ADD\t: add a contact to the Phonebook" << std::endl;
+	std::cout << " Search\t: serarch a contact in the Phonebook" << std::endl;
+	std::cout << " EXIT\t: add a contact to the Phonebook" << std::endl;
+	std::cout << "------------------------------------------------" << std::endl;
+	std::cout << std::endl;
+
 }
