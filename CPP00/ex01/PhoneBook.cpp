@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:45:51 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/04/18 09:20:50 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/04/18 09:33:56 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ void	PhoneBook::addContact(void){
 	this->_contacts[i % 8].init();
 	this->_contacts[i % 8].setIndex(i % 8);
 	i++;
-	this->_count = i; // nombre de contacts cree
+	// nombre de contacts cree dans le tableau
+	if (i >= 8)
+		this->_count = 8;
+	else
+		this->_count = i;
 	return ;
 }
 void	PhoneBook::searchContact(void) const{
