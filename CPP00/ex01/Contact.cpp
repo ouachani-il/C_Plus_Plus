@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 20:05:54 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/04/17 18:33:12 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/04/18 09:03:14 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	Contact::_printStr(const std::string str){
 void	Contact::viewContact(void) const{
 	if (this->_lastName.empty() || this->_firstName.empty() || this->_nickName.empty())
 		return ;
+
 	std::cout << "|";
 	std::cout << std::setw(10) << this->_index << std::flush;
 	std::cout << "|";
@@ -86,7 +87,7 @@ std::string	Contact::_getStr(std::string str) const{
 
 	do
 	{
-		std::cout << str << std::endl;
+		std::cout << str << std::flush;
 		std::getline(std::cin, input);
 		if (std::cin.good() && !input.empty())
 			validStr = true;
@@ -103,10 +104,10 @@ std::string	Contact::_getStr(std::string str) const{
  */
 void	Contact::init(void){
 	std::cin.ignore();
-	this->_firstName = this->_getStr("please enter your first Name");
-	this->_firstName = this->_getStr("please enter your last Name");
-	this->_firstName = this->_getStr("please enter your nickname");
-	this->_firstName = this->_getStr("please enter your phone number");
-	this->_firstName = this->_getStr("please enter your darkest secret");
-	std::cout << std::endl;
+	this->_firstName = this->_getStr("please enter your first Name\t:");
+	this->_lastName = this->_getStr("please enter your last Name\t:");
+	this->_nickName = this->_getStr("please enter your nickname\t:");
+	this->_phoneNumber = this->_getStr("please enter your phone number\t:");
+	this->_darkestSecret = this->_getStr("please enter your darkest secret\t:");
+	//std::cout << std::endl;
 }

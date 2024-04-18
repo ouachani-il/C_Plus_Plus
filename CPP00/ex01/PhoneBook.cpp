@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:45:51 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/04/17 18:26:48 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/04/18 09:20:50 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	PhoneBook::addContact(void){
 	this->_contacts[i % 8].init();
 	this->_contacts[i % 8].setIndex(i % 8);
 	i++;
+	this->_count = i; // nombre de contacts cree
 	return ;
 }
 void	PhoneBook::searchContact(void) const{
@@ -33,14 +34,14 @@ void	PhoneBook::searchContact(void) const{
 
 	do
 	{
-		std::cout << "Please enter the index of the contact to display :" << std::endl;
+		std::cout << "Please enter the index of the contact to display :" << std::flush;
 		std::cin >> sindex;
-		if (std::cin.good() && (sindex >= 0 && sindex <= 7))
+		if (std::cin.good() && (sindex >= 0 && sindex < this->_count))
 			nvalid = true;
 		else{
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-			std::cout << "Please enter a valid contact number !" << std::endl;
+			std::cout << "unvalid index !" << std::flush;
 		}
 	} while (!nvalid);
 	this->_contacts[sindex].display();
@@ -58,8 +59,9 @@ void	PhoneBook::printContacts(void) const{
 	std::cout << "|";
 	std::cout << std::setw(10) << "Nickname" << std::flush;
 	std::cout << "|";
+	std::cout << std::endl;
 
-	for (size_t i = 0; i < 8; i++){
+	for (int i = 0; i < this->_count; i++){
 		this->_contacts[i].viewContact();
 	}
 	return ;
