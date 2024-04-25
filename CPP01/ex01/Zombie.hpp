@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zambie.hpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 09:13:00 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/04/25 10:04:48 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/04/25 17:05:29 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZAMBIE_HPP_
-# define _ZAMBIE_HPP_
+#ifndef _Zombie_HPP_
+# define _Zombie_HPP_
 
-# include <string>
+#include <string>
+#include <iostream>
+#include<string>
+#include <sstream>
 
-class Zambie{
-    public:
-        Zambie(void);
-        ~Zambie(void);
-        void    annonce(void) const;
-		Zambie*	newZambie(std::string nom);
-    private:
-        std::string _name;
-        
+class Zombie{
+	public:
+		Zombie(void);
+		Zombie(std::string name);
+		~Zombie(void);
+		void	annonce(void) const;
+		std::string	_getName(void) const;
+		void	_setName(std::string const name);
+		
+	private:
+		std::string	_name;
 };
+
+Zombie* zombieHorde( int N, std::string name );
 
 #endif

@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zambie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 09:38:21 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/04/25 10:08:27 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/04/25 16:49:50 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <string>
-#include <iomanip>
 #include <iostream>
-#include "Zambie.hpp"
+#include "Zombie.hpp"
 
-Zambie::Zambie(void){	
+Zombie::Zombie(void){
 }
-Zambie::~Zambie(void){	
+
+Zombie::Zombie(std::string name){
+	this->_name = name;
 }
-void    Zambie::annonce(void) const{
+Zombie::~Zombie(void){
+	std::cout << this->_name << " is destroyed" << std::endl;
+}
+void	Zombie::annonce(void) const{
 	std::cout << this->_name << ":" << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
-Zambie*	Zambie::newZambie(std::string nom){
-	Zambie*	z = new Zambie("")
+
+void	Zombie::_setName(std::string const name) {
+	this->_name = name;
 }
+
+std::string	Zombie::_getName(void) const{
+	return (this->_name);
+}
+
+
