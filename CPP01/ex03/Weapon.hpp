@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 17:40:00 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/04/25 22:32:34 by ilham_oua        ###   ########.fr       */
+/*   Created: 2024/04/25 20:04:18 by ilham_oua         #+#    #+#             */
+/*   Updated: 2024/04/25 22:23:56 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#ifndef _WEAPON_HPP_
+# define _WEAPON_HPP_
 
-HumanA::HumanA(Weapon weap){
-	this->_weap = weap;
-}
-HumanA::~HumanA(void){
-}
-void    HumanA::attack(std::string type) const{
-	std::cout << this->_name << "attacks with their " << this->_weap._getType() << std::endl;
-}
-HumanA::_setWeapon(Weapon weap){
-	this->_weap = weap;
-}
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <sstream>
+
+class Weapon{
+	private:
+		std::string _type;
+	public:
+		Weapon(std::string type);
+		Weapon::~Weapon(void);
+		void    _setType(std::string type);
+		std::string _getType(void) const;
+};
+#endif
