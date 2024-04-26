@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:39:43 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/04/25 22:33:54 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/04/26 17:02:22 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class HumanB{
 	public:
         HumanB(void);
         HumanB(Weapon weap);
-		void    attack(std::string type) const;
+		void    attack(void) const;
         void    _setWeapon(Weapon weap);
 };
 #endif

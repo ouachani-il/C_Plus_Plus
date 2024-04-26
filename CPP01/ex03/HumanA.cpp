@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:40:00 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/04/25 22:32:34 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/04/26 17:02:44 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ HumanA::HumanA(Weapon weap){
 }
 HumanA::~HumanA(void){
 }
-void    HumanA::attack(std::string type) const{
+void	HumanA::attack(void) const{
 	std::cout << this->_name << "attacks with their " << this->_weap._getType() << std::endl;
 }
-HumanA::_setWeapon(Weapon weap){
+void	HumanA::_setWeapon(Weapon weap){
 	this->_weap = weap;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:38:55 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/04/25 22:30:33 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/04/26 17:01:15 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class HumanA{
 	public:
 		HumanA(Weapon weap);
 		~HumanA(void);
-		void    attack(std::string type) const;
+		void	attack() const;
 		void	_setWeapon(Weapon weap);
 };
 #endif
