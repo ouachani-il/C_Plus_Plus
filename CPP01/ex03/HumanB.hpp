@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:39:43 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/04/26 17:02:22 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:34:04 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@
 #include "Weapon.hpp"
 
 class HumanB{
-    
+	
 	private:
 		std::string _name;
-        Weapon  _weap;
-        
+		Weapon*	_weap;
+		
 	public:
-        HumanB(void);
-        HumanB(Weapon weap);
-		void    attack(void) const;
-        void    _setWeapon(Weapon weap);
+		HumanB(std::string name);
+		~HumanB(void);
+		void	attack(void) const;
+		void	_setWeapon(Weapon& weap);
 };
 #endif

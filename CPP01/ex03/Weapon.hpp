@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:04:18 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/04/25 22:23:56 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/04/29 17:37:08 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Weapon{
 		std::string _type;
 	public:
 		Weapon(std::string type);
-		Weapon::~Weapon(void);
-		void    _setType(std::string type);
-		std::string _getType(void) const;
+		~Weapon(void);
+		void	_setType(std::string type);
+		const std::string& _getType(void) const;
 };
 #endif
