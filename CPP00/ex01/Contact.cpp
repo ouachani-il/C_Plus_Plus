@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 20:05:54 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/04/18 09:03:14 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:35:44 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,14 @@ void	Contact::setIndex(int i){
 	this->_index = i;
 	return ;
 }
-
+bool	isAlphaNumerique(std::string str){
+	for (size_t i = 0; i < str.length(); i++)
+	{
+		if (!std::isalnum(str[i]))
+		return false;
+	}
+	return true;
+}
 /** 
  * un getteur generalisé pour tout type d'attribut de type string de la classe contact*/
 std::string	Contact::_getStr(std::string str) const{
@@ -89,7 +96,12 @@ std::string	Contact::_getStr(std::string str) const{
 	{
 		std::cout << str << std::flush;
 		std::getline(std::cin, input);
-		if (std::cin.good() && !input.empty())
+		if (std::cin.eof()){
+			std::cout << "Pay attention ctrl + D is not accepted" << std::endl;
+			validStr = true;
+			//std::cout << "Invalid input, please try again" << std::endl;
+		}
+		if (std::cin.good() && !input.empty() && isAlphaNumerique(input))
 			validStr = true;
 		else{
 			std::cin.clear();

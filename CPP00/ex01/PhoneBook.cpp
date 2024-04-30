@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:45:51 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/04/18 09:33:56 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:51:24 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ PhoneBook::PhoneBook(void){
 PhoneBook::~PhoneBook(void){
 }
 
+static int	i;
+
 void	PhoneBook::addContact(void){
-	static int	i;
 
 	this->_contacts[i % 8].init();
 	this->_contacts[i % 8].setIndex(i % 8);
@@ -36,6 +37,11 @@ void	PhoneBook::searchContact(void) const{
 	int		sindex = -1;
 	bool	nvalid = false;
 
+	if ( i == 0){
+		std::cout << "The phonebook is empty, no search is possible, please ADD some contacts" << std::endl;
+		return ;
+	}
+		
 	do
 	{
 		std::cout << "Please enter the index of the contact to display :" << std::flush;
@@ -76,7 +82,7 @@ void	PhoneBook::init(){
 	std::cout << std::endl;
 	std::cout << "-----------------How it works ?-----------------" << std::endl;
 	std::cout << " ADD\t: add a contact to the Phonebook" << std::endl;
-	std::cout << " Search\t: serarch a contact in the Phonebook" << std::endl;
+	std::cout << " SEARCH\t: serarch a contact in the Phonebook" << std::endl;
 	std::cout << " EXIT\t: add a contact to the Phonebook" << std::endl;
 	std::cout << "------------------------------------------------" << std::endl;
 	std::cout << std::endl;
