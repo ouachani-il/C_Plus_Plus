@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+         #
+#    By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 16:30:21 by ilouacha          #+#    #+#              #
-#    Updated: 2024/04/17 16:30:23 by ilouacha         ###   ########.fr        #
+#    Updated: 2024/05/01 20:35:05 by ilham_oua        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS	= $(shell find . -name "*.cpp")
 
 OBJS	= ${SRCS:.cpp=.o}
 
-NAME	= phonebook
+NAME	= 
 
 CC		= clang++
 
