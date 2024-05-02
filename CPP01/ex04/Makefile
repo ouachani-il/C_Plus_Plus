@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+         #
+#    By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 16:30:21 by ilouacha          #+#    #+#              #
-#    Updated: 2024/05/01 20:35:05 by ilham_oua        ###   ########.fr        #
+#    Updated: 2024/05/02 10:56:31 by ilouacha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS	= $(shell find . -name "*.cpp")
 
 OBJS	= ${SRCS:.cpp=.o}
 
-NAME	= 
+NAME	= sedForLoosers
 
 CC		= clang++
 
