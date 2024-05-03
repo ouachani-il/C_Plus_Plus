@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 20:05:54 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/05/03 17:07:51 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:44:46 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,10 +161,10 @@ std::string	Contact::_getNbr(std::string str) const{
  */
 void	Contact::init(void){
 	std::cin.ignore();
-	this->_firstName = this->_getStr("please ent\t:");
-	this->_lastName = this->_getStr("please enter your last Name\t:");
-	this->_nickName = this->_getStr("please enter your nickname\t:");
-	this->_phoneNumber = this->_getNbr("please enter your phone number\t:");
-	this->_darkestSecret = this->_getStr("please enter your darkest secret\t:");
+	this->_firstName = this->_getStr("First name \t:");
+	this->_lastName = this->_getStr("Last Name\t:");
+	this->_nickName = this->_getStr("Nickname\t:");
+	this->_phoneNumber = this->_getNbr("Phone number\t:");
+	this->_darkestSecret = this->_getStr("Darkest secret\t:");
 	//std::cout << std::endl;
 }
