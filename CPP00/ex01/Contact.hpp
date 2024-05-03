@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 19:22:35 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/04/17 18:17:38 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:06:19 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class	Contact{
 		void	viewContact(void) const;
 		void	setIndex(int i);
 		void	init(void);
+		std::string		_getStr( const std::string& str);
 		//printList();
 	private :
 		std::string	_firstName;
@@ -35,7 +36,7 @@ class	Contact{
 		std::string	_darkestSecret;
 		int			_index;
 	
-		std::string		_getStr(std::string str) const;
+		std::string		_getNbr(std::string str) const;
 		static void		_printStr(const std::string str);
 };
 

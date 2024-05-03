@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 20:05:54 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/04/30 17:35:44 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:07:51 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	Contact::viewContact(void) const{
 	return ;
 }
 /**
- * @brief This method is used to giev the search result if the contact is found
+ * @brief This method is used to give the search result if the contact is found
  * 
  */
 void	Contact::display(void) const{
@@ -69,6 +69,8 @@ void	Contact::display(void) const{
 	std::cout << "First name \t:" << this->_firstName << std::endl;
 	std::cout << "Last name \t:" << this->_lastName << std::endl;
 	std::cout << "Nickname \t:" << this->_nickName << std::endl;
+	std::cout << "PhoneNumber \t:" << this->_phoneNumber << std::endl;
+	std::cout << "DarkestSecret \t:" << this->_darkestSecret << std::endl;
 	std::cout << "--------------------------------------------------" << std::endl;
 	return ;
 }
@@ -85,16 +87,26 @@ bool	isAlphaNumerique(std::string str){
 	}
 	return true;
 }
+
+// bool	isNumerique(std::string str){
+// 	for (size_t i = 0; i < str.length(); i++)
+// 	{
+// 		if (!std::isdigit((str[i])))
+// 		return false;
+// 	}
+// 	return true;
+// }
+
 /** 
  * un getteur generalisé pour tout type d'attribut de type string de la classe contact*/
-std::string	Contact::_getStr(std::string str) const{
+std::string	Contact::_getStr(const std::string& str) {
 	
 	std::string	input = "";
 	bool		validStr = false;
 
 	do
 	{
-		std::cout << str << std::flush;
+		std::cout << str ;
 		std::getline(std::cin, input);
 		if (std::cin.eof()){
 			std::cout << "Pay attention ctrl + D is not accepted" << std::endl;
@@ -110,16 +122,49 @@ std::string	Contact::_getStr(std::string str) const{
 	} while (!validStr);
 	return input;
 }
+
+bool isNumerique(const std::string& str) {
+    for (size_t i = 0; i < str.length(); i++) { // Parcourir chaque caractère de la chaîne
+        if (!std::isdigit(str[i])) { // Si ce n'est pas un chiffre
+            return false; // La chaîne contient un caractère non numérique
+        }
+    }
+    return true; // Tous les caractères sont des chiffres
+}
+
+std::string	Contact::_getNbr(std::string str) const{
+	
+	std::string	input = "";
+	bool		validStr = false;
+
+	do
+	{
+		std::cout << str << std::flush;
+		std::getline(std::cin, input);
+		if (std::cin.eof()){
+			std::cout << "Pay attention ctrl + D is not accepted" << std::endl;
+			validStr = true;
+			//std::cout << "Invalid input, please try again" << std::endl;
+		}
+		if (std::cin.good() && !input.empty() && isNumerique(input))
+			validStr = true;
+		else{
+			std::cin.clear();
+			std::cout << "Invalid input, please try again" << std::endl;
+		}
+	} while (!validStr);
+	return input;
+}
 /**
  * @brief initialize the contact with its different parameter when created
  * 
  */
 void	Contact::init(void){
 	std::cin.ignore();
-	this->_firstName = this->_getStr("please enter your first Name\t:");
+	this->_firstName = this->_getStr("please ent\t:");
 	this->_lastName = this->_getStr("please enter your last Name\t:");
 	this->_nickName = this->_getStr("please enter your nickname\t:");
-	this->_phoneNumber = this->_getStr("please enter your phone number\t:");
+	this->_phoneNumber = this->_getNbr("please enter your phone number\t:");
 	this->_darkestSecret = this->_getStr("please enter your darkest secret\t:");
 	//std::cout << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:45:51 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/04/30 16:51:24 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:36:25 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,25 @@ PhoneBook::PhoneBook(void){
 PhoneBook::~PhoneBook(void){
 }
 
-static int	i;
+static int	i_contact = 0;
 
 void	PhoneBook::addContact(void){
 
-	this->_contacts[i % 8].init();
-	this->_contacts[i % 8].setIndex(i % 8);
-	i++;
+	this->_contacts[i_contact % 8].init();
+	this->_contacts[i_contact % 8].setIndex(i_contact % 8);
+	i_contact++;
 	// nombre de contacts cree dans le tableau
-	if (i >= 8)
+	if (i_contact >= 8)
 		this->_count = 8;
 	else
-		this->_count = i;
+		this->_count = i_contact;
 	return ;
 }
 void	PhoneBook::searchContact(void) const{
 	int		sindex = -1;
 	bool	nvalid = false;
 
-	if ( i == 0){
+	if ( i_contact == 0){
 		std::cout << "The phonebook is empty, no search is possible, please ADD some contacts" << std::endl;
 		return ;
 	}
@@ -46,6 +46,8 @@ void	PhoneBook::searchContact(void) const{
 	{
 		std::cout << "Please enter the index of the contact to display :" << std::flush;
 		std::cin >> sindex;
+		if(std::cin.eof())
+			break;
 		if (std::cin.good() && (sindex >= 0 && sindex < this->_count))
 			nvalid = true;
 		else{
@@ -54,7 +56,9 @@ void	PhoneBook::searchContact(void) const{
 			std::cout << "unvalid index !" << std::flush;
 		}
 	} while (!nvalid);
-	this->_contacts[sindex].display();
+	
+	if (sindex != -1)
+		this->_contacts[sindex].display();
 	
 	return ;
 }
@@ -71,8 +75,11 @@ void	PhoneBook::printContacts(void) const{
 	std::cout << "|";
 	std::cout << std::endl;
 
-	for (int i = 0; i < this->_count; i++){
-		this->_contacts[i].viewContact();
+	if(i_contact == 0)
+			return;
+	
+	for (int j = 0; j < this->_count; j++){
+		this->_contacts[j].viewContact();
 	}
 	return ;
 }

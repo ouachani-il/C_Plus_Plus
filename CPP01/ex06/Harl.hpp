@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 06:47:51 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/05/03 07:13:23 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/05/03 11:29:24 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # include <iostream>
 
 class Harl{
-    
+	
 public:
-    Harl();
-    ~Harl();
-    void	Harl::complain(std::string level);
+	Harl();
+	~Harl();
+	void	Harl::complain(std::string level);
 
 private:
 void	debug();

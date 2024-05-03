@@ -6,7 +6,7 @@
 #    By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 16:30:21 by ilouacha          #+#    #+#              #
-#    Updated: 2024/04/17 16:30:23 by ilouacha         ###   ########.fr        #
+#    Updated: 2024/05/03 16:45:25 by ilouacha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ NAME	= phonebook
 
 CC		= clang++
 
-CFLAGS	= -O0 -g -Wall -Werror -Wextra -std=c++98
+CFLAGS	= -O0 -g -Wall -Werror -Wextra -std=c++98 -g3
 
 RM		= rm -rf
 

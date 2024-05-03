@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 06:47:39 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/05/03 07:30:20 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/05/03 12:03:46 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+
 Harl::Harl(){
 }
 
@@ -22,20 +23,20 @@ void	Harl::complain(std::string level){
 	int	i = 0;
 	while (i < 4 && levels[i].compare(level))
 		i++;
-switch (i) {
-    case 0:
-        this->debug();
-    case 1:
-        this->info();
-    case 2:
-        this->warning();
-    case 3:
-        this->error();
-        break ;
-    // Autres cas possibles
-    default:
-    std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-}
+	switch (i) {
+		case 0:
+			this->debug();
+		case 1:
+			this->info();
+		case 2:
+			this->warning();
+		case 3:
+			this->error();
+			break ;
+		// Autres cas possibles
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	}
 }
 
 void	Harl::debug(void){

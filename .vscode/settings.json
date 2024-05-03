@@ -72,6 +72,8 @@
 		"mutex": "cpp",
 		"ratio": "cpp",
 		"sstream": "cpp",
-		"variant": "cpp"
+		"variant": "cpp",
+		"csignal": "cpp",
+		"fstream": "cpp"
 	}
 }
