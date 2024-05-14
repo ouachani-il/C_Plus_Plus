@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:13:27 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/05/02 16:49:55 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/05/14 14:20:54 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,12 @@ int	main(int ac, const char *av[]){
 	std::string	s1 = av[2];
 	std::string	s2;
 	s2 = av[3];
-
+	if ( s1.empty() || s2.empty())
+	{
+		std::cout << "error : empty chain !" << std::endl;
+		return 1;
+	}
+		
 	std::string	output_file = "";
 	output_file += av[1];
 	output_file += ".replace";
