@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 16:01:23 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/05/17 11:21:15 by ilouacha         ###   ########.fr       */
+/*   Created: 2024/05/17 16:03:48 by ilouacha          #+#    #+#             */
+/*   Updated: 2024/05/17 18:12:54 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FIXED_HPP_
-# define _FIXED_HPP_
+#ifndef _POINT_HPP_
+# define _POINT_HPP_
 
 # include <iostream>
-# include <string>
-class Fixed{
-	public:
-	Fixed(void);
-	Fixed(Fixed const & fixed);
-	~Fixed();
+# include "Fixed.hpp"
 
-	Fixed&	operator=(Fixed const & rhs);
-	int getRawBits( void ) const;
-	void	setRawBits( int const raw );
-	
-	
-	private:
-	int	_value;
+class Point{
+private:
+	const Fixed	_x;
+	const Fixed	_y;
+public:
+	Point(void);
+	Point(const float x, const float y);
+	Point(Point const & pt);
+	~Point(void);
 
-	static const int	_fractBits = 8;
-	
-	
+	Point& operator=(Point const & rhs);
+
+	Fixed	getX(void) const;
+	Fixed	getY(void) const;
+	static Point	ftVector(Point const & a, Point const &b);
 };
+
+
 #endif
