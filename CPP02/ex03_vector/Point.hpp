@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:03:48 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/05/30 17:33:36 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:33:30 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ public:
 
 	Fixed	getX(void) const;
 	Fixed	getY(void) const;
-//	static Point	ftVector(Point const & a, Point const &b);
+	static Point	ftVector(Point const & a, Point const &b);
 };
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif

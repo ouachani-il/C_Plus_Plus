@@ -5,26 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 17:08:10 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/05/17 18:33:06 by ilouacha         ###   ########.fr       */
+/*   Created: 2024/05/30 16:04:04 by ilouacha          #+#    #+#             */
+/*   Updated: 2024/05/30 17:34:18 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 #include "Fixed.hpp"
 
-
-Fixed	crossProduct( const Point& a, const Point& b )
-{
-	return (a.getX() * b.getY() - a.getY() * b.getX());
-}
-
 /**
- * @brief This function computes wheather th point is in the triangle formed 
- * by the three points a, b and c. And this is possible by computing three 
- * cross products which should have the same sign. Namely aPxab, bcxbP and
- * cPxca. Hence all of those vectors should be computed.
+ * @brief We should compute the determinent of the following matrix to know 
+ * wheather the point P in inside the ABC triangle or not:
  * 
+ *			det | xa    ya    1|
+				| xb    yb    1|
+				| xc    yc    1|
+
+				= xa |yb     1| + xb |ya    1| + xc |ya    1|
+					 |yc     1|      |yc    1|      |yb    1|
+
+				= xa( yb - yc) + xb (ya - yc) + xc(ya - yb) 
+			   
+		airTriangle = abs(det/2) 
+					= (
+					  a.getX() * [ b.getY() - c.getY() ] + 
+					  b.getX() * [ a.getY() - c.getY() ] +
+					  c.getX() * [ a.getY() - b.getY()]) / 2
+
+ * Thus, if the sum of the three trinagles airs : ABP + ACP + BCP = air(ABC) => P is inside ABC
  * @param a 
  * @param b 
  * @param c 
@@ -32,41 +40,28 @@ Fixed	crossProduct( const Point& a, const Point& b )
  * @return true 
  * @return false 
  */
-bool bsp( Point const a, Point const b, Point const c, Point const point){
-	Point ab = Point::ftVector(a, b);
-	Point ap = Point::ftVector(a, point);
-	std::cout << "ab x = " << ab.getX() << "ab y = " << ab.getY() << std::endl;
 
-	Point bc = Point::ftVector(b, c);
-	Point bp = Point::ftVector(b, point);
+static Fixed triangleAir(Point const a, Point const b, Point const c){
+/*     std::cout << (( a.getX() * ( b.getY() - c.getY() ) + 
+                b.getX() * ( c.getY() - a.getY() ) +
+                c.getX() * ( a.getY() - b.getY()) ) / 2 ) << std::endl;*/
 
-	Point ca = Point::ftVector(c, a);
-	Point cp = Point::ftVector(c, point);
-
-	// Now we should compute the cross products
-
-	Fixed	abp = crossProduct(ab, ap);
-	Fixed	bcp = crossProduct(bc, bp);
-	Fixed	cap = crossProduct(ca, cp);
-	std::cout << "abp = " << abp.toFloat() << "bcp = " << bcp.toFloat() 
-		<< "cap = " << cap.toFloat() << std::endl;
-
-	if (( abp < 0 && bcp < 0 && cap < 0 ) || (abp < 0 && bcp < 0 && cap < 0 ))
-		return true;
-	return false;
+	return (( a.getX() * ( b.getY() - c.getY() ) + 
+					  b.getX() * ( c.getY() - a.getY() ) +
+					  c.getX() * ( a.getY() - b.getY())) / 2 );
 }
 
-int	main(void){
-	Point A = Point(0, 0);
-	Point B = Point(5, 0);
-	Point C = Point(0, 5);
-	Point P = Point(1, 1);  // Point to be checked
+static Fixed	abs( Fixed x ){
+	if ( x < 0)
+		return (Fixed (-1) * x);
+	return x ;
+}
 
-	if (bsp( A, B, C, P )) {
-		std::cout << "Point P is inside the triangle." << std::endl;
-	} else {
-		std::cout << "Point P is outside the triangle." << std::endl;
-	}
+bool	bsp(Point const a, Point const b, Point const c, Point const point){
+	Fixed	triangle1 = abs(triangleAir(point, a, b));
+	Fixed	triangle2 = abs(triangleAir(point, b, c));
+	Fixed	triangle3 = abs(triangleAir(point, a, c));
+	Fixed	triangle0 = abs(triangleAir(a, b, c));
 
-	return 0;
+	return (triangle0 == (triangle1 + triangle2 + triangle3));
 }
