@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 21:41:05 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/05/31 17:31:50 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:02:23 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ int main(void){
 
 	// a attacks c
 	c.attack("test1");
-	
+	a.beRepaired(5);
+	c.takeDamage(5);
+	a.attack("test1");
+	c.takeDamage(5);
+	c.attack("test2");
 	//
 }

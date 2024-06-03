@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 19:38:28 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/03 16:57:15 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:59:54 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,9 @@ void ClapTrap::beRepaired(unsigned int amount){
 		std::cout << "ClapTrap " << _name 
 			<< " can't be repaired: unsafficient energy points !!" << std::endl;
 	}
-	std::cout << this->_name << " is repared with " << amount
-	<< std::endl;
+	this->_hitPoints += amount;
+	this->_energyPoints -= amount;
+	std::cout << this->_name << " is repared with " << amount << std::endl;
 }
 
 /********Getteurs et setteurs  *********/
