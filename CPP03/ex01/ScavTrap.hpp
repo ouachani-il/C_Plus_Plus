@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 23:03:57 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/05/28 23:05:10 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/05/31 17:44:28 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define _SCAVTRAP_HPP_
 
 # include <iostream>
+# include "ClapTrap.hpp"
 
-class 
+class ScavTrap : public ClapTrap{
+	
+};
+
 #endif

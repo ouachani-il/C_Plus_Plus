@@ -1,3 +1,0 @@
-ceci est un fichier test. ce fichier sert a tester exo 04 du cpp01 fichier
-bon courage pour afficher le fichier.
-cool

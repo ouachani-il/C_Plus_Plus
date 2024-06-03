@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 21:41:05 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/05/31 17:31:50 by ilouacha         ###   ########.fr       */
+/*   Created: 2024/05/31 18:37:53 by ilouacha          #+#    #+#             */
+/*   Updated: 2024/05/31 20:22:46 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _DIAMONDTRAP_HPP_
+# define _DIAMONDTRAP_HPP_
+
 # include "ClapTrap.hpp"
-# include <iostream>
-# include <string>
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
 
-int main(void){
-	ClapTrap	c("test1");
-	ClapTrap	a("test2");
 
-	// a attacks c
-	c.attack("test1");
+class DiamondTrap : public ScavTrap , public FrgTrap{
 	
-	//
-}
+public:
+	DiamondTrap(std::string name);
+	DiamondTrap(DiamondTrap & const rhs);
+	~DiamondTrap(void);
+	
+private:
+	std::string	_name;
+};
+#endif
