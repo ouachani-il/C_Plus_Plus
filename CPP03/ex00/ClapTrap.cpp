@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 19:38:28 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/03 16:59:54 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/04 11:42:32 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ ClapTrap::ClapTrap(ClapTrap const & clapTrap){
 ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs){
 	if ( this != &rhs ){
 		this->_name = rhs._getName();
-		this->_attackDamage = rhs._getAttackDamage();
-		this->_energyPoints = rhs._getEnergyPoints();
-		this->_hitPoints = rhs._getHitPoints();
+		this->_attackDamage = rhs.getAttackDamage();
+		this->_energyPoints = rhs.getEnergyPoints();
+		this->_hitPoints = rhs.getHitPoints();
 		std::cout << "ClapTrap copy assignment operator called for " << this->_name << std::endl;
 	}
 	return *this;
@@ -44,8 +44,8 @@ void ClapTrap::attack(const std::string &target) {
 		return ;
 	}
 	this->_energyPoints -= 1;
-	std::cout << "ClapTrap" << this->_name << "attacks" << target << ", causing"
-	<< this->_attackDamage << "of damage!" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing "
+	<< this->_attackDamage << " points of damage !" << std::endl;
 }
 void ClapTrap::takeDamage(unsigned int amount){
 	if (_hitPoints < amount){
@@ -61,11 +61,11 @@ void ClapTrap::beRepaired(unsigned int amount){
 	if (_energyPoints < amount)
 	{
 		std::cout << "ClapTrap " << _name 
-			<< " can't be repaired: unsafficient energy points !!" << std::endl;
+			<< " can't be repaired: unsufficient energy points !!" << std::endl;
 	}
 	this->_hitPoints += amount;
-	this->_energyPoints -= amount;
-	std::cout << this->_name << " is repared with " << amount << std::endl;
+	this->_energyPoints --;
+	std::cout << this->_name << " is repared with " << amount << "." << std::endl;
 }
 
 /********Getteurs et setteurs  *********/
@@ -73,16 +73,31 @@ std::string	ClapTrap::_getName(void) const{
 	return this->_name;
 }
 
-unsigned int	ClapTrap::_getAttackDamage(void) const{
+unsigned int	&ClapTrap::getAttackDamage(void){
 	return this->_attackDamage;
 }
 
-unsigned int	ClapTrap::_getEnergyPoints(void) const{
+unsigned int	&ClapTrap::getEnergyPoints(void){
 	return this->_energyPoints;
 }
 
-unsigned int	ClapTrap::_getHitPoints(void) const{
+unsigned int	&ClapTrap::getHitPoints(void){
 	return this->_hitPoints;
+}
+
+void	ClapTrap::setName(std::string name){
+	this->_name = name;
+}
+void	ClapTrap::setHitPoints(unsigned int hitPoints){
+	this->_hitPoints = hitPoints;
+}
+void	ClapTrap::setEnergyPoints(unsigned int energyPoints){
+	
+	this->_energyPoints = energyPoints;
+}
+
+void	ClapTrap::setAttackDamage(unsigned int attackD){
+	this->_attackDamage = attackD;
 }
 
 /**
