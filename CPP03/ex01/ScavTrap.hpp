@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 23:03:57 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/05/31 17:44:28 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/04 11:15:41 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,15 @@
 # include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap{
-	
+
+public:
+	ScavTrap(std::string name);
+	ScavTrap(ScavTrap const & rhs);
+	ScavTrap & operator=(ScavTrap const & rhs);
+	~ScavTrap(void);
+	void guardGate();
+
+
 };
 
 #endif
