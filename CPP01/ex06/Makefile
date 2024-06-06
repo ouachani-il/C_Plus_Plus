@@ -6,7 +6,7 @@
 #    By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 16:30:21 by ilouacha          #+#    #+#              #
-#    Updated: 2024/04/17 16:30:23 by ilouacha         ###   ########.fr        #
+#    Updated: 2024/06/06 18:24:27 by ilouacha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,11 @@ SRCS	= $(shell find . -name "*.cpp")
 
 OBJS	= ${SRCS:.cpp=.o}
 
-NAME	= phonebook
+NAME	= Harl
 
-CC		= clang++
+CC		= c++
 
-CFLAGS	= -O0 -g -Wall -Werror -Wextra -std=c++98
+CFLAGS	= -g -Wall -Werror -Wextra -std=c++98
 
 RM		= rm -rf
 

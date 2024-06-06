@@ -6,7 +6,7 @@
 #    By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 16:30:21 by ilouacha          #+#    #+#              #
-#    Updated: 2024/04/25 15:20:25 by ilouacha         ###   ########.fr        #
+#    Updated: 2024/06/06 18:17:04 by ilouacha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ OBJS	= ${SRCS:.cpp=.o}
 
 NAME	= zombie
 
-CC		= clang++
+CC		= c++
 
-CFLAGS	= -O0 -g -Wall -Werror -Wextra -std=c++98
+CFLAGS	= -g -Wall -Werror -Wextra -std=c++98
 
 RM		= rm -rf
 

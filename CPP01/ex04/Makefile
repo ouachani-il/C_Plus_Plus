@@ -6,7 +6,7 @@
 #    By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 16:30:21 by ilouacha          #+#    #+#              #
-#    Updated: 2024/05/14 14:19:34 by ilouacha         ###   ########.fr        #
+#    Updated: 2024/06/06 18:19:50 by ilouacha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ OBJS	= ${SRCS:.cpp=.o}
 
 NAME	= sedForLoosers
 
-CC		= clang++
+CC		= c++
 
-CFLAGS	= -O0 -g -Wall -Werror -Wextra -std=c++98
+CFLAGS	= -g -Wall -Werror -Wextra -std=c++98
 
 RM		= rm -rf
 

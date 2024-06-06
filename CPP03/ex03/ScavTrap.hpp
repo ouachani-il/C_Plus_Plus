@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 23:03:57 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/06 12:09:59 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/06 12:53:56 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap{
+class ScavTrap : public virtual ClapTrap{
 private:
 	bool	_guardMode;
 	

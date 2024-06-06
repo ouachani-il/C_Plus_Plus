@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 19:38:28 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/06 10:02:45 by ilouacha         ###   ########.fr       */
+/*   Created: 2024/06/06 10:51:00 by ilouacha          #+#    #+#             */
+/*   Updated: 2024/06/06 12:35:53 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,22 @@
 
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0){
-	std::cout << "ClapTrap constructor is called" << std::endl;
+	std::cout << "ClapTrap parametric constructor is called" << std::endl;
 }
 ClapTrap::ClapTrap(ClapTrap const & clapTrap){
 	*this = clapTrap;
-	std::cout << "ClapTrap copy constructor called for " << this->_name << std::endl;
+	std::cout << "ClapTrap copy constructor is called for " << this->_name << std::endl;
 }
 ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs){
 	if ( this != &rhs ){
-		this->_name = rhs.getName();
-		this->_attackDamage = rhs.getAttackDamage();
-		this->_energyPoints = rhs.getEnergyPoints();
-		this->_hitPoints = rhs.getHitPoints();
+		this->_name = rhs._getName();
+		this->_attackDamage = rhs._getAttackDamage();
+		this->_energyPoints = rhs._getEnergyPoints();
+		this->_hitPoints = rhs._getHitPoints();
 		std::cout << "ClapTrap copy assignment operator called for " << this->_name << std::endl;
 	}
 	return *this;
 }
-
 ClapTrap::~ClapTrap(void){
 	std::cout << "ClapTrap destructor is called for " << this->_name << std::endl;
 }
@@ -72,20 +71,20 @@ void ClapTrap::beRepaired(unsigned int amount){
 }
 
 /********Getteurs et setteurs  *********/
-std::string	ClapTrap::getName(void) const{
+std::string	ClapTrap::_getName(void) const{
 	return this->_name;
 }
 
-unsigned int	ClapTrap::getAttackDamage(void) const{
+unsigned int	ClapTrap::_getAttackDamage(void) const{
 	return this->_attackDamage;
 }
 
-unsigned int	ClapTrap::getEnergyPoints(void) const{
+unsigned int	ClapTrap::_getEnergyPoints(void) const{
 	return this->_energyPoints;
 }
 
-unsigned int	ClapTrap::getHitPoints(void) const{
-	return this->_hitPoints;
+unsigned int	ClapTrap::_getHitPoints(void) const{
+		return this->_hitPoints;
 }
 
 void	ClapTrap::setName(std::string name){
@@ -102,9 +101,3 @@ void	ClapTrap::setEnergyPoints(unsigned int energyPoints){
 void	ClapTrap::setAttackDamage(unsigned int attackD){
 	this->_attackDamage = attackD;
 }
-
-/**
- * @brief hit points represente la duree de vie elle n'est pas touchee par les attack, 
- * le dommage est mis ds cet exo a 0, il n'y a que l'energie qui est touchee
- * 
- */

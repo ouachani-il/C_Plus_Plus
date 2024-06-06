@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/05/17 11:10:14 by ilouacha          #+#    #+#              #
-#    Updated: 2024/06/06 11:04:33 by ilouacha         ###   ########.fr        #
+#    Created: 2024/06/06 11:04:54 by ilouacha          #+#    #+#              #
+#    Updated: 2024/06/06 11:05:04 by ilouacha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRCS	= $(shell find . -name "*.cpp")
 
 OBJS	= ${SRCS:.cpp=.o}
 
-NAME	= ScavTrap
+NAME	= FragTrap
 
 CC		= clang++
 
