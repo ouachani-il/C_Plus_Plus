@@ -3,23 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 10:03:21 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/06 11:14:42 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/07 00:12:56 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ClapTrap.hpp"
 # include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(void) : ClapTrap() {
+	std::cout << "ScavTrap default constructor is called." << std::endl;
+	_name = "Default";
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 20;
+	_guardMode = false;
+	
+}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << "ScavTrap parametric constructor is called." << std::endl;
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
-	this->_guardMode = false;
+	_name = name;
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 20;
+	_guardMode = false;
 	
 }
 ScavTrap::ScavTrap(ScavTrap const & ScavTrap) : ClapTrap(ScavTrap) {

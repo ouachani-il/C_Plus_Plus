@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:52:48 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/06 12:00:49 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/07 00:09:55 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,20 @@
 # include "FragTrap.hpp"
 
 
+FragTrap::FragTrap(void) : ClapTrap() {
+	std::cout << "FragTrap default constructor is called." << std::endl;
+	_name = "Default";
+	_hitPoints = 100;
+	_energyPoints = 100;
+	_attackDamage = 30;
+	
+}
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	std::cout << "FragTrap parametric constructor is called." << std::endl;
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
+	_name = name;
+	_hitPoints = 100;
+	_energyPoints = 100;
+	_attackDamage = 30;
 	
 }
 FragTrap::FragTrap(FragTrap const & src) : ClapTrap(src) {

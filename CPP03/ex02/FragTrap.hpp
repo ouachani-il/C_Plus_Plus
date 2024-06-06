@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:54:05 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/06 12:10:27 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/07 00:10:11 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class FragTrap : public ClapTrap {
 
 	
 public:
+	FragTrap(void);
 	FragTrap(std::string name);
 	FragTrap(FragTrap const & rhs);
 	FragTrap 	&operator=(FragTrap const & rhs);

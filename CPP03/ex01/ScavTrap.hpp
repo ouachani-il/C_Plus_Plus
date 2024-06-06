@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 23:03:57 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/06 12:09:59 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/07 00:01:07 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ private:
 	bool	_guardMode;
 	
 public:
+	ScavTrap(void);
 	ScavTrap(std::string name);
 	ScavTrap(ScavTrap const & rhs);
 	ScavTrap 	&operator=(ScavTrap const & rhs);

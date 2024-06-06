@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:58:59 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/06 12:21:19 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/06 23:57:50 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
@@ -27,6 +28,16 @@ int	main(void)
 	j.attack("a human");
 	j.highFivesGuys();
 	j.beRepaired(5);
+
+	DiamondTrap	diamond = DiamondTrap("derived");
+	
+	diamond.whoAmI();
+	diamond.attack("anyone");
+	diamond.beRepaired(5);
+	diamond.highFivesGuys();
+	diamond.guardGate();
+	diamond.takeDamage(10);
+	return 0;
 }
 
 

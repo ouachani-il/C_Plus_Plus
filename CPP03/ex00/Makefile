@@ -6,7 +6,7 @@
 #    By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/17 11:10:14 by ilouacha          #+#    #+#              #
-#    Updated: 2024/05/28 23:01:48 by ilham_oua        ###   ########.fr        #
+#    Updated: 2024/06/07 00:03:24 by ilham_oua        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ OBJS	= ${SRCS:.cpp=.o}
 
 NAME	= ClapTrap
 
-CC		= clang++
+CC		= c++
 
-CFLAGS	= -O0 -g -Wall -Werror -Wextra -std=c++98
+CFLAGS	= -g -Wall -Werror -Wextra -std=c++98
 
 RM		= rm -rf
 

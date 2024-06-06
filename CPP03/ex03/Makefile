@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+         #
+#    By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/06 11:04:54 by ilouacha          #+#    #+#              #
-#    Updated: 2024/06/06 11:05:04 by ilouacha         ###   ########.fr        #
+#    Updated: 2024/06/07 00:05:57 by ilham_oua        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ OBJS	= ${SRCS:.cpp=.o}
 
 NAME	= FragTrap
 
-CC		= clang++
+CC		= c++
 
-CFLAGS	= -O0 -g -Wall -Werror -Wextra -std=c++98
+CFLAGS	= -g -Wall -Werror -Wextra -std=c++98
 
 RM		= rm -rf
 

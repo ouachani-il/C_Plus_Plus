@@ -3,18 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 19:38:28 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/06 10:02:45 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/07 00:11:20 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ClapTrap.hpp"
 
 
+ClapTrap::ClapTrap(void): _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0){
+	std::cout << "ClapTrap default constructor is called" << std::endl;
+}
 ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0){
-	std::cout << "ClapTrap constructor is called" << std::endl;
+	std::cout << "ClapTrap parametric constructor is called" << std::endl;
 }
 ClapTrap::ClapTrap(ClapTrap const & clapTrap){
 	*this = clapTrap;
