@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 18:37:53 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/06 23:01:52 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/06/07 12:52:42 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ private:
 public:
 	DiamondTrap(void);
 	DiamondTrap(std::string name);
-	DiamondTrap(DiamondTrap & const rhs);
+	DiamondTrap(DiamondTrap const &rhs);
 	DiamondTrap	&operator=(DiamondTrap const &rhs);
 	virtual	~DiamondTrap(void);
 

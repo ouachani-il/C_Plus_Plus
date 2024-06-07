@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 17:41:44 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/06 11:15:48 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/07 18:39:07 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 int main(void){
-	ClapTrap	c("test1");
+	ClapTrap	c("");
 	ScavTrap	a("test2");
 
 	// a attacks c
