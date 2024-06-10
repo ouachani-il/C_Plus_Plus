@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:58:59 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/06 12:05:09 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/09 20:10:17 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	main(void)
 {
-	ClapTrap	bob = ClapTrap("Bob");
+	ClapTrap	bob;
 
 	bob.attack("a worm");
 	bob.takeDamage(9);

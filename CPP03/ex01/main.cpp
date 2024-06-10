@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 17:41:44 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/07 18:39:07 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/09 20:09:18 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(void){
 	c.takeDamage(5);
 	c.attack("test2");
 	c.attack("test2");
-	a.beRepaired(5);
+	a.beRepaired(50);
 	a.guardGate();
 	a.guardGate();
 	//
