@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 06:50:36 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/11 07:33:41 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/06/11 12:49:08 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,12 @@ Animal  &Animal::operator=(Animal const &rhs){
 	}
 	std::cout << "Animal copy assignement oprator  is called" << std::endl;
 	return *this;
+}
+
+std::string	Animal::getType(void) const{
+	return ( _type );
+}
+
+void	Animal::makeSound(void) const{
+	std::cout << "Each animal has a specific sound" << std::endl;
 }
