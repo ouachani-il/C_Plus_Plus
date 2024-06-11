@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 19:38:28 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/07 00:11:20 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/06/11 09:44:07 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,10 @@ void ClapTrap::takeDamage(unsigned int amount){
 		std::cout << "not enough hit points to take the damage : " 
 		<< this->_name << " is dead" << std::endl;
 		_hitPoints = 0;
+		return ;
 	}
 	_hitPoints -= amount;
-	std::cout << this->_name << " takes advantage of " 
+	std::cout << this->_name << " takes damage of " 
 	<< amount << "." << std::endl;
 }
 
@@ -68,6 +69,8 @@ void ClapTrap::beRepaired(unsigned int amount){
 	{
 		std::cout << "ClapTrap " << _name 
 			<< " can't be repaired: unsufficient energy points !!" << std::endl;
+		_energyPoints = 0;
+		return ;
 	}
 	this->_hitPoints += amount;
 	this->_energyPoints --;
