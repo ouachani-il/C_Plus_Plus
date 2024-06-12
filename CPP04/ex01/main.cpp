@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 10:33:35 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/12 11:44:14 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/06/12 16:22:49 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Animal	*animals[N];
 
 for (unsigned int k = 0; k < N / 2; k++){
 	animals[k] = new Cat();
-	animals[N / 2 + k + 1] = new Dog();
+	animals[N / 2 + k] = new Dog();
 }
 
 // Delete the allocated animals,

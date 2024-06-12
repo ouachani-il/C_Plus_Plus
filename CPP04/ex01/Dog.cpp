@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 07:25:00 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/11 17:33:44 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:16:44 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,8 @@ Dog  &Dog::operator=(Dog const &rhs){
 
 void	Dog::makeSound(void) const{
 	std::cout << "habhabhab !!" << std::endl;
+}
+
+Brain	*Dog::getBrain() const{
+	return _brain ;
 }

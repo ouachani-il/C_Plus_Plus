@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 06:50:36 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/11 12:49:08 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:02:08 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ Animal::Animal(void){
 	std::cout << "Animal default constructor is called" << std::endl;
 }
 
-Animal::Animal(std::string type) : _type(type) {    
+Animal::Animal(std::string type) : _type(type) {
 	std::cout << "Animal parametric constructor is called" << std::endl;
 }
 Animal::Animal(Animal const &src){
 	std::cout << "Animal copy constructor is called" << std::endl;
-	*this = src;
+	_type = src._type;
 }
 
 Animal::~Animal(void){
@@ -42,4 +42,8 @@ std::string	Animal::getType(void) const{
 
 void	Animal::makeSound(void) const{
 	std::cout << "Each animal has a specific sound" << std::endl;
+}
+
+Brain	*Animal::getBrain(void) const {
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 07:23:00 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/11 17:33:16 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:13:32 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,8 @@ Cat  &Cat::operator=(Cat const &rhs){
 
 void	Cat::makeSound(void) const{
 	std::cout << "miaowww !" << std::endl;
+}
+
+Brain	*Cat::getBrain() const{
+	return _brain ;
 }

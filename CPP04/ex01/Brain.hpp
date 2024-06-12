@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:29:34 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/11 16:41:03 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:08:27 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	Brain(Brain const &src);
 	Brain	&operator=(Brain const &rhs);
 	virtual			~Brain(void);
+	
 	std::string		getIdeas(unsigned int i) const;
 	void			setIdeas(std::string str, unsigned int i);
 	

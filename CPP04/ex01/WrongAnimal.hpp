@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/11 07:22:05 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/12 16:15:21 by ilouacha         ###   ########.fr       */
+/*   Created: 2024/06/11 10:16:35 by ilouacha          #+#    #+#             */
+/*   Updated: 2024/06/11 13:31:08 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _CAT_HPP_
-# define _CAT_HPP_
+#ifndef _WRONGANIMAL_HPP_
+# define _WRONGANIMAL_HPP_
 
 # include <iostream>
 # include <string>
-# include "Animal.hpp"
-#include "Brain.hpp"
 
-class Cat : public Animal{
-private:
+
+class WrongAnimal {
+protected:
 	std::string _type;
-	Brain*	_brain;
-	Cat(std::string type);
+	WrongAnimal(std::string type);
 	
 public:
-	Cat(void);
-	Cat(Cat const &src);
-	Cat		&operator=(Cat const &rhs);
-	virtual	~Cat(void);
+	WrongAnimal(void);
+	WrongAnimal(WrongAnimal const &src);
+	WrongAnimal	&operator=(WrongAnimal const &rhs);
+	virtual			~WrongAnimal(void);
+	void			makeSound(void) const;
+	std::string		getType(void) const;
 	
-	virtual void	makeSound(void) const;
-	
-	virtual Brain	*getBrain() const;
 };
 
 #endif

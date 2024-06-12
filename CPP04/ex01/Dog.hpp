@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 07:23:58 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/11 16:55:07 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:16:09 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ public:
 	Dog(Dog const &src);
 	Dog		&operator=(Dog const &rhs);
 	virtual	~Dog(void);
+	
 	virtual void	makeSound(void) const;
+	
+	virtual Brain	*getBrain() const;
 	
 };
 

@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:29:19 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/11 16:41:37 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:11:00 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,9 @@ Brain  &Brain::operator=(Brain const &rhs){
 std::string	Brain::getIdeas(unsigned int i) const{
 	return ( *ideas[i]);
 }
+
+void		Brain::setIdeas(std::string str, unsigned int i){
+	*ideas[i] = str;
+}
+
 
