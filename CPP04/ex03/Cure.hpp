@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/13 04:32:37 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/13 15:17:54 by ilouacha         ###   ########.fr       */
+/*   Created: 2024/06/13 10:45:06 by ilouacha          #+#    #+#             */
+/*   Updated: 2024/06/13 13:05:38 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ICHARACTER_HPP_
-# define _ICHARACTER_HPP_
+#ifndef _CURE_HPP_
+# define _CURE_HPP_
 
 # include <iostream>
 # include <string>
+# include "ICharacter.hpp"
 # include "AMateria.hpp"
 
 
-class ICharacter
+class Cure : public AMateria
 {
+private:
+	std::string	_type;
+	
 public:
-virtual ~ICharacter() {}
+Cure(void);
+Cure(std::string const &type);
+Cure(Cure const &src);
+virtual	~Cure(void);
+Cure	&operator=(Cure const &rhs);
 
-virtual std::string const & getName() const = 0;
-virtual void equip(AMateria* m) = 0;
-virtual void unequip(int idx) = 0;
-virtual void use(int idx, ICharacter& target) = 0;
+
+//virtual std::string const & getType() const;
+virtual Cure* clone() const;
+virtual void use(ICharacter& target);
 };
 
 #endif

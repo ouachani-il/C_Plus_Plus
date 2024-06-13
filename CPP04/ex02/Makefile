@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+         #
+#    By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 07:35:59 by ilham_oua         #+#    #+#              #
-#    Updated: 2024/06/11 07:36:11 by ilham_oua        ###   ########.fr        #
+#    Updated: 2024/06/13 10:20:55 by ilouacha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRCS	= $(shell find . -name "*.cpp")
 
 OBJS	= ${SRCS:.cpp=.o}
 
-NAME	= Animal
+NAME	= AAnimal
 
 CC		= c++
 

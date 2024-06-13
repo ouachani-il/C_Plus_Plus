@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/13 04:32:37 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/13 15:17:54 by ilouacha         ###   ########.fr       */
+/*   Created: 2024/06/13 15:34:48 by ilouacha          #+#    #+#             */
+/*   Updated: 2024/06/13 15:38:41 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ICHARACTER_HPP_
-# define _ICHARACTER_HPP_
+# include "ICharacter.hpp"
+# include "Character.hpp"
 
-# include <iostream>
-# include <string>
-# include "AMateria.hpp"
+Character::Character(void){
+	
+}
+Character::Character(std::string const &type){
+	
+}
+Character::Character(Character const &src){
+	
+}
 
-
-class ICharacter
-{
-public:
-virtual ~ICharacter() {}
-
-virtual std::string const & getName() const = 0;
-virtual void equip(AMateria* m) = 0;
-virtual void unequip(int idx) = 0;
-virtual void use(int idx, ICharacter& target) = 0;
-};
-
-#endif
+Character::~Character(void){
+	
+}
+Character	&Character::operator=(Character const &rhs){
+	
+}

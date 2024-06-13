@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/13 04:32:37 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/13 15:17:54 by ilouacha         ###   ########.fr       */
+/*   Created: 2024/06/13 15:19:55 by ilouacha          #+#    #+#             */
+/*   Updated: 2024/06/13 15:36:34 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ICHARACTER_HPP_
-# define _ICHARACTER_HPP_
+#ifndef _CHARACTER_HPP_
+# define _CHARACTER_HPP_
 
 # include <iostream>
 # include <string>
+# include "ICharacter.hpp"
 # include "AMateria.hpp"
 
 
-class ICharacter
+class Character : public ICharacter
 {
+private:
+	;
+	
 public:
-virtual ~ICharacter() {}
+Character(void);
+Character(std::string const &type);
+Character(Character const &src);
+virtual	~Character(void);
+Character	&operator=(Character const &rhs);
 
-virtual std::string const & getName() const = 0;
-virtual void equip(AMateria* m) = 0;
-virtual void unequip(int idx) = 0;
-virtual void use(int idx, ICharacter& target) = 0;
+
+//virtual std::string const & getType() const;
 };
 
 #endif

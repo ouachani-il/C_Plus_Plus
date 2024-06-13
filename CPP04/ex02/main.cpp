@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 10:33:35 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/13 03:27:59 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/06/13 10:20:07 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
@@ -22,10 +22,10 @@ const	AAnimal* i = new Cat();
 delete	j;//should not create a leak
 delete	i;
 
-   std::cout << std::endl;
+std::cout << std::endl;
 
 unsigned int	N = 4;
-const Animal*	animals[N];
+const AAnimal*	animals[N];
 
 for (unsigned int k = 0; k < N / 2; k++){
 	animals[k] = new Dog();
