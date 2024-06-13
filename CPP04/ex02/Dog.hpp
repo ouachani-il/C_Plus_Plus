@@ -6,7 +6,7 @@
 /*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 07:23:58 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/13 03:26:36 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/06/13 03:24:22 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 # include <iostream>
 # include <string>
-# include "Animal.hpp"
+# include "AAnimal.hpp"
+#include "Brain.hpp"
 
-class Dog : public Animal{
+class Dog : public AAnimal{
 private:
-	Dog(std::string type);
+	Brain*	_brain;
+	//Dog(std::string type);
 	
 public:
 	Dog(void);
@@ -28,6 +30,8 @@ public:
 	virtual	~Dog(void);
 	
 	void	makeSound(void) const;
+	
+	virtual Brain	*getBrain() const;
 	
 };
 

@@ -3,28 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 07:25:00 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/12 16:16:44 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/13 02:38:05 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-Dog::Dog(void) : Animal("Dog Parent"){
+Dog::Dog(void) : Animal(){
     _type = "Dog";
 	_brain = new Brain();
 	std::cout << "Animal default constructor is called" << std::endl;
 }
 
-Dog::Dog(std::string type) : Animal(type + " Parent") { 
+/*Dog::Dog(std::string type) : Animal(type + " Parent") { 
     _type = type; 
 	_brain = new Brain();  
 	std::cout << "Dog parametric constructor is called" << std::endl;
-}
-Dog::Dog(Dog const &src): Animal("Dog Parent"){
+}*/
+Dog::Dog(Dog const &src): Animal(){
 	std::cout << "Dog copy constructor is called" << std::endl;
 	*this = src;
 }
@@ -36,7 +36,7 @@ Dog::~Dog(void){
 Dog  &Dog::operator=(Dog const &rhs){
 	if ( this != &rhs ){
 		this->_type = rhs._type;
-		_brain = rhs._brain;
+		_brain = new Brain(*rhs._brain);
 	}
 	std::cout << "Dog copy assignement oprator  is called" << std::endl;
 	return *this;

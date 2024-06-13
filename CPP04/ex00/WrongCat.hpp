@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:02:41 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/11 13:13:32 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/13 02:55:37 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 class WrongCat : public WrongAnimal{
 private:
-	std::string _type;
 	WrongCat(std::string type);
 	
 public:

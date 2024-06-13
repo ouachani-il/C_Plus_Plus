@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 07:22:05 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/11 12:50:22 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/13 03:26:27 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 class Cat : public Animal{
 private:
-	std::string _type;
 	Cat(std::string type);
 	
 public:
@@ -27,7 +26,8 @@ public:
 	Cat(Cat const &src);
 	Cat		&operator=(Cat const &rhs);
 	virtual	~Cat(void);
-	virtual void	makeSound(void) const;
+	
+	void	makeSound(void) const;
 	
 };
 

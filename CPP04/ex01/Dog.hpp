@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 07:23:58 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/12 16:16:09 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/13 04:16:36 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@
 
 class Dog : public Animal{
 private:
-	std::string _type;
-	Dog(std::string type);
+	//Dog(std::string type);
 	Brain*	_brain;
 	
 public:

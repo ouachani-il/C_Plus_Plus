@@ -6,13 +6,13 @@
 /*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 07:23:00 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/13 02:36:22 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/06/13 03:21:44 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal(){
+Cat::Cat(void) : AAnimal(){
     _type = "Cat";
 	_brain = new Brain();
 	std::cout << "Cat default constructor is called" << std::endl;
@@ -24,7 +24,7 @@ Cat::Cat(void) : Animal(){
 	_brain = new Brain();
 	std::cout << "Cat parametric constructor is called" << std::endl;
 }*/
-Cat::Cat(Cat const &src) : Animal(){
+Cat::Cat(Cat const &src) : AAnimal(){
 	std::cout << "Cat copy constructor is called" << std::endl;
 	*this = src;
 }

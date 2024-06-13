@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Aanimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/11 07:23:58 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/13 03:26:36 by ilham_oua        ###   ########.fr       */
+/*   Created: 2024/06/13 02:42:24 by ilham_oua         #+#    #+#             */
+/*   Updated: 2024/06/13 02:49:21 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _DOG_HPP_
-# define _DOG_HPP_
+#ifndef _AANIMAL_HPP_
+# define _AANIMAL_HPP_
 
 # include <iostream>
 # include <string>
-# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Dog : public Animal{
-private:
-	Dog(std::string type);
+class AAnimal {
+protected:
+	std::string _type;
 	
 public:
-	Dog(void);
-	Dog(Dog const &src);
-	Dog		&operator=(Dog const &rhs);
-	virtual	~Dog(void);
+	AAnimal(void);
+	AAnimal(AAnimal const &src);
+	AAnimal			&operator=(AAnimal const &rhs);
+	virtual			~AAnimal(void);
 	
-	void	makeSound(void) const;
+	virtual void	makeSound(void) const = 0;
 	
+	std::string		getType(void) const;
+	virtual Brain			*getBrain(void) const;
 };
 
 #endif

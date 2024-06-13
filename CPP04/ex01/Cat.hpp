@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 07:22:05 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/12 16:15:21 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/13 04:16:41 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@
 
 class Cat : public Animal{
 private:
-	std::string _type;
 	Brain*	_brain;
-	Cat(std::string type);
+	//Cat(std::string type);
 	
 public:
 	Cat(void);
