@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/13 15:19:55 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/14 19:36:08 by ilouacha         ###   ########.fr       */
+/*   Created: 2024/06/14 18:13:08 by ilouacha          #+#    #+#             */
+/*   Updated: 2024/06/14 18:53:04 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _CHARACTER_HPP_
-# define _CHARACTER_HPP_
+#ifndef _MATERIASOURCE_HPP_
+# define _MATERIASOURCE_HPP_
 
 # include <iostream>
 # include <string>
 # include "ICharacter.hpp"
 # include "AMateria.hpp"
+# include "IMateriaSource.hpp"
 
 
-class Character : public ICharacter
+class MateriaSource : public IMateriaSource
 {
 private:
-	std::string	_name;
-	AMateria*	inv[4];
+	;
 	
 public:
-Character(void);
-Character(std::string const &type);
-Character(Character const &src);
-virtual	~Character(void);
-Character	&operator=(Character const &rhs);
+MateriaSource(void);
+MateriaSource(std::string const &type);
+MateriaSource(MateriaSource const &src);
+virtual	~MateriaSource(void);
+MateriaSource	&operator=(MateriaSource const &rhs);
 
 
-std::string const & getName() const;
-void equip(AMateria* m) ;
-void unequip(int idx) ;
-void use(int idx, ICharacter& target);
+virtual void learnMateria(AMateria*) {
+	
+}
+virtual AMateria* createMateria(std::string const & type) {
+	
+}
 };
 
 #endif

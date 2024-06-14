@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 11:16:29 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/13 15:04:45 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/14 18:58:12 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,12 @@ Cure::Cure(std::string const & type) : AMateria(){
 
 Cure*	Cure::clone() const{
 	std::cout << "Cloning Materia." << std::endl; 
+	Cure	* copy = new Cure(this->_type);
+	return (copy);
 	
 }
 
 void Cure::use(ICharacter& target){
-	std::cout << "use ICharater called." << std::endl; 
+	std::cout << "* heals <name>’s wounds *" << std::endl; 
 	
 }
