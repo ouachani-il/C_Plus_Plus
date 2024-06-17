@@ -6,19 +6,19 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 11:16:29 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/14 18:58:12 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/17 16:18:45 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
-Cure::Cure(void) : AMateria(){
+Cure::Cure(void) : AMateria("Cure"){
 	_type = "cure";
 	std::cout << "Default Cure constructor is called" << std::endl;
 	
 }
 
 
-Cure::Cure(Cure const &src) : AMateria(){
+Cure::Cure(Cure const &src) : AMateria("Cure"){
 	*this = src;
 	std::cout << " Copy Cure constructor is called" << std::endl;
 	
@@ -54,6 +54,6 @@ Cure*	Cure::clone() const{
 }
 
 void Cure::use(ICharacter& target){
-	std::cout << "* heals <name>’s wounds *" << std::endl; 
+	std::cout << "* heals " << target.getName() <<"'s wounds *" << std::endl; 
 	
 }

@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:48:16 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/13 15:03:55 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/17 16:10:19 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ std::string const	&AMateria::getType() const{
 	return (_type);
 }
 
-AMateria*	AMateria::clone() const{
+/*AMateria*	AMateria::clone() const{
 	std::cout << "Cloning AMateria." << std::endl; 
 	
-}
+}*/
 
 void AMateria::use(ICharacter& target){
-	std::cout << "use ICharater called." << std::endl; 
+	std::cout << "Materia: " << this->_type << " is used on " << target.getName() << "." << std::endl; 
 	
 }

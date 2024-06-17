@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 18:13:08 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/14 18:53:04 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/17 14:14:41 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,15 @@ private:
 	;
 	
 public:
-MateriaSource(void);
-MateriaSource(std::string const &type);
-MateriaSource(MateriaSource const &src);
-virtual	~MateriaSource(void);
-MateriaSource	&operator=(MateriaSource const &rhs);
-
-
-virtual void learnMateria(AMateria*) {
+	MateriaSource(void);
+	MateriaSource(std::string const &type);
+	MateriaSource(MateriaSource const &src);
+	virtual	~MateriaSource(void);
+	MateriaSource	&operator=(MateriaSource const &rhs);
 	
-}
-virtual AMateria* createMateria(std::string const & type) {
 	
-}
+	virtual void learnMateria(AMateria*);
+	virtual AMateria* createMateria(std::string const & type);
 };
 
 #endif

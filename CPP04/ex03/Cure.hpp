@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:45:06 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/13 13:05:38 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/17 16:14:15 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ virtual Cure* clone() const;
 virtual void use(ICharacter& target);
 };
 
+std::ostream	&operator<<(std::ostream &o, Cure const &i);
 #endif
