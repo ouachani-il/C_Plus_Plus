@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 11:16:29 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/17 16:18:45 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/18 11:04:33 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,3 +57,5 @@ void Cure::use(ICharacter& target){
 	std::cout << "* heals " << target.getName() <<"'s wounds *" << std::endl; 
 	
 }
+
+

@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:48:16 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/17 16:10:19 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/18 11:03:58 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,13 @@ void AMateria::use(ICharacter& target){
 	std::cout << "Materia: " << this->_type << " is used on " << target.getName() << "." << std::endl; 
 	
 }
+
+/**************************Output on the ostream***********************/
+
+std::ostream &	operator<<(std::ostream & o, AMateria const & i){
+	o << i.getType();
+
+	return o;
+}
+
+

@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 04:30:01 by ilham_oua         #+#    #+#             */
-/*   Updated: 2024/06/13 11:39:24 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/18 11:04:22 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ std::string const & getType() const; //Returns the materia type
 virtual AMateria* clone() const = 0;
 virtual void use(ICharacter& target);
 };
+
+std::ostream	&operator<<(std::ostream &o, AMateria const &i);
 
 #endif

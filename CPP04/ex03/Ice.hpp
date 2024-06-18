@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:40:39 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/13 13:05:47 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/18 11:04:48 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ Ice	&operator=(Ice const &rhs);
 virtual Ice* clone() const;
 virtual void use(ICharacter& target);
 };
+
 
 #endif

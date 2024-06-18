@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:56:12 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/17 16:23:46 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/18 11:03:27 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,4 @@ void Ice::use(ICharacter& target){
 	std::cout << "* shoots an ice bolt at " << target.getName() <<  " *" << std::endl;
 	
 }
+
