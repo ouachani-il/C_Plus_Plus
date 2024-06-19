@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 15:34:48 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/18 15:06:19 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/19 06:40:30 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,13 @@ Character::~Character(void){
 	}
 }
 Character	&Character::operator=(Character const &rhs){
-	
+	if (this != &rhs){
+		_name = rhs.getName();
+		for (int k = 0; k < 4; k++){
+			this->inv[k] = rhs.inv[k]->clone();
+		}
+	}
+
 }
 /**************************METHOD*****************************/
 

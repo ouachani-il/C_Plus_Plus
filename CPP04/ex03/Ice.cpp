@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:56:12 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/18 11:03:27 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/19 06:37:05 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Ice::Ice(Ice const &src) : AMateria(){
 Ice	&Ice::operator=(Ice const &src){
 	std::cout << "Copy assignement Ice constructor is called" << std::endl;
 	if ( this != &src){
-		_type = src._type;
+		_type = src.getType();
 	}
 	
 }
