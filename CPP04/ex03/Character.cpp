@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 15:34:48 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/19 06:40:30 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/06/19 10:26:46 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ICharacter.hpp"
 # include "Character.hpp"
 
-static int	i = 0;
 
 Character::Character(void){
 	_name = "Default";
@@ -52,10 +51,10 @@ std::string const & Character::getName() const{
 }
 
 void Character::equip(AMateria* m) {
-	if (i >= 0 && i < 4){
-		inv[i] = m;
+	if (_iEquip >= 0 && _iEquip < _iEquip){
+		inv[_iEquip] = m;
 		std::cout << " The " << m->getType() << "is added to the location" << i << "of the inventary" << std::endl;
-		i++;
+		_iEquip++;
 	}
 	else if (i >=4 || i < 0){
 		std::cout << "The inventary is full" << std::endl;
