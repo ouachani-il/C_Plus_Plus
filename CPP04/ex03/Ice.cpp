@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:56:12 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/19 06:37:05 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/06/20 16:37:26 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,31 @@
 
 Ice::Ice(void) : AMateria(){
 	_type = "ice";
-	std::cout << "Default Ice constructor is called" << std::endl;
+	//std::cout << "Default Ice constructor is called" << std::endl;
 	
 }
 
 
 Ice::Ice(Ice const &src) : AMateria(){
 	*this = src;
-	std::cout << " Copy Ice constructor is called" << std::endl;
+	//std::cout << " Copy Ice constructor is called" << std::endl;
 	
 }
 
 Ice	&Ice::operator=(Ice const &src){
-	std::cout << "Copy assignement Ice constructor is called" << std::endl;
+	//std::cout << "Copy assignement Ice constructor is called" << std::endl;
 	if ( this != &src){
 		_type = src.getType();
 	}
-	
+	return *this;
 }
 Ice::~Ice(void){	
-	std::cout << "Ice destructor is called" << std::endl;
+	//std::cout << "Ice destructor is called" << std::endl;
 }
 
 Ice::Ice(std::string const & type) : AMateria(){
 	_type = type;
-	std::cout << _type << " Parametric Ice is created." << std::endl; 
+	//std::cout << _type << " Parametric Ice is created." << std::endl; 
 }
 
 /*std::string const	&Ice::getType() const{

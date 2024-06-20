@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 15:19:55 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/19 10:23:54 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/20 11:05:48 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Character : public ICharacter
 {
 private:
 	std::string	_name;
-	AMateria*	inv[4];
+	AMateria*	_inv[4];
 	int	_iEquip;
 
 public:

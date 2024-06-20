@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 18:08:50 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/14 18:12:45 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/20 15:38:03 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,37 @@
 # include "Cure.hpp"
 # include "Ice.hpp"
 # include "IMateriaSource.hpp"
+# include "MateriaSource.hpp"
 
 int main()
 {
-	IMateriaSource* src = new MateriaSource();
+		IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
+
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
+	me->use(2, *bob);
+	me->use(3, *bob);
+	me->use(4, *bob);
+	me->unequip(4);
+	me->unequip(3);
+	me->use(3, *bob);
+	me->unequip(3);
+
 	delete bob;
 	delete me;
 	delete src;
