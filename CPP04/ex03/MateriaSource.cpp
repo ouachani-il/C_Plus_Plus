@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 18:16:15 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/20 16:11:49 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:56:21 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ MateriaSource::MateriaSource(MateriaSource const &src){
 
 MateriaSource::~MateriaSource(void){
 	
-	for (int k = 0; k < _iLearn; k++){
+	for (int k = 0; k < 4; k++){
 		if (_materia[k] != NULL)
+		{
 			delete _materia[k];
+		}
 	}
 }
 
@@ -47,8 +49,10 @@ MateriaSource	&MateriaSource::operator=(MateriaSource const &rhs){
 	return *this;
 }
 void		MateriaSource::learnMateria(AMateria* materia){
+	if (materia == NULL)
+		return ;
 	if (_iLearn < 4){
-		_materia[_iLearn] = materia;
+		this->_materia[_iLearn] = materia;
 		_iLearn++;
 	}
 	if (_iLearn == 4)
@@ -57,10 +61,13 @@ void		MateriaSource::learnMateria(AMateria* materia){
 
 AMateria* 	MateriaSource::createMateria(std::string const & type){
 	for (int k = 0; k < 4; k++) {
-		if (_materia[k] != NULL){
-				if (_materia[k]->getType() == type) {
-				return _materia[k]->clone(); //deep copy
-				//return this->_materias[k]; // shallow copy
+		if (_materia[k] != NULL)
+		{
+			//std::cout << _materia[k]->getType() << " == " << type << std::endl;
+			if (_materia[k]->getType() == type)
+			{
+				return this->_materia[k]->clone(); //deep copy
+				//return this->_materia[k]; // shallow copy
 			}
 		}
 	}

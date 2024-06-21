@@ -6,19 +6,19 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 11:16:29 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/20 16:37:39 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:53:39 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
-Cure::Cure(void) : AMateria("Cure"){
+Cure::Cure(void) : AMateria("cure"){
 	_type = "cure";
 	//std::cout << "Default Cure constructor is called" << std::endl;
 	
 }
 
 
-Cure::Cure(Cure const &src) : AMateria("Cure"){
+Cure::Cure(Cure const &src) : AMateria("cure"){
 	*this = src;
 	//std::cout << " Copy Cure constructor is called" << std::endl;
 	
@@ -42,7 +42,7 @@ Cure::~Cure(void){
 
 Cure*	Cure::clone() const{
 	//std::cout << "Cloning Materia." << std::endl; 
-	Cure	* copy = new Cure(*this);
+	Cure	*copy = new Cure();
 	return (copy);
 	
 }
