@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 18:16:15 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/21 18:56:21 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/21 19:01:19 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void		MateriaSource::learnMateria(AMateria* materia){
 	if (materia == NULL)
 		return ;
 	if (_iLearn < 4){
-		this->_materia[_iLearn] = materia;
+		this->_materia[_iLearn] = materia->clone();
 		_iLearn++;
 	}
 	if (_iLearn == 4)

@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 18:08:50 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/21 18:41:33 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/21 19:04:00 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ int main()
 	me->equip(tmp);
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
-	tmp = src->createMateria("cure");
+	tmp = src->createMateria("cure"); //ici l'erreur !
 	me->equip(tmp);
-	tmp = src->createMateria("ice");
+	tmp = src->createMateria("ice"); //ici l'erreur !
 	me->equip(tmp);
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
