@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 15:34:48 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/21 18:40:25 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/22 05:24:05 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,14 @@ Character::Character(std::string const &name){
 }
 
 Character::Character(Character const &src){
-	for (int k = 0; k < 4; k++){
+	
+	/*for (int k = 0; k < 4; k++){
 		if (src._inv[k] != NULL){
 			this->_inv[k] = src._inv[k];
 		} else {
 			this->_inv[k] = NULL;
 		}
-	}
+	}*/
 	*this = src;
 }
 
@@ -63,12 +64,14 @@ Character	&Character::operator=(Character const &rhs){
 	}
 	return *this;
 }
-/**************************METHOD*****************************/
+/**************************GETTEURS*****************************/
+
 
 std::string const & Character::getName() const{
 	return (_name);
 }
 
+/**************************METHOD*****************************/
 void Character::equip(AMateria* m)
 {
 	if ( m == NULL )

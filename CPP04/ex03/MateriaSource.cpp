@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 18:16:15 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/21 19:01:19 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/22 05:42:48 by ilham_oua        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,28 @@ MateriaSource	&MateriaSource::operator=(MateriaSource const &rhs){
 	}
 	return *this;
 }
+
+/**************************METHOD*****************************/
+
 void		MateriaSource::learnMateria(AMateria* materia){
 	if (materia == NULL)
 		return ;
-	if (_iLearn < 4){
-		this->_materia[_iLearn] = materia->clone();
-		_iLearn++;
+	for (int k = 0; k < 4; k++){
+		if (this->_materia[k] == NULL){
+			this->_materia[k] = materia;
+			return ;
+		}
+	} 
+	/*if (this->_iLearn < 4){
+		this->_materia[_iLearn] = materia;
+		this->_iLearn++;
 	}
-	if (_iLearn == 4)
-		_iLearn = 0;
+	if (this->_iLearn == 4)
+		this->_iLearn = 0;*/
 }
 
 AMateria* 	MateriaSource::createMateria(std::string const & type){
-	for (int k = 0; k < 4; k++) {
+	for (int k = 0; k < _iLearn; k++) {
 		if (_materia[k] != NULL)
 		{
 			//std::cout << _materia[k]->getType() << " == " << type << std::endl;
