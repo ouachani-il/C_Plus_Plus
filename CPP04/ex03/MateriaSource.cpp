@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 18:16:15 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/22 05:42:48 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/06/23 20:25:33 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void		MateriaSource::learnMateria(AMateria* materia){
 }
 
 AMateria* 	MateriaSource::createMateria(std::string const & type){
-	for (int k = 0; k < _iLearn; k++) {
+	for (int k = 0; k < 4; k++) {
 		if (_materia[k] != NULL)
 		{
 			//std::cout << _materia[k]->getType() << " == " << type << std::endl;
@@ -80,5 +80,6 @@ AMateria* 	MateriaSource::createMateria(std::string const & type){
 			}
 		}
 	}
+
 	return NULL;
 }

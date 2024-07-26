@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 18:30:49 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/07/25 23:34:52 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/07/26 18:06:59 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,29 @@
 
 # include <iostream>
 # include <string>
-#
+# include <exception>
 
 class Bureaucrat{
+	class GradeTooHighException: public std::exception{
+		public:
+		virtual const char* what() const throw(){
+			return ("Grade too high !");
+		}
+	};
+	class GradeTooLowException: public std::exception{
+		public:
+		virtual const char* what() const throw(){
+			return ("Grade too low !");
+		}
+	};
+
+
 private:
-	std::string			name;
+	const std::string			name;
 	int					grade;
 public:
 	Bureaucrat(void);
-	//Bureaucrat(std::string n, int g);
+	Bureaucrat(std::string n, int g);
 	Bureaucrat(Bureaucrat const & src);
 	Bureaucrat&			operator=(Bureaucrat const & rhs);
 	virtual 			~Bureaucrat(void);
@@ -32,10 +46,8 @@ public:
 	int			getGrade();
 	void		incGrade();
 	void		decGrade();
-	void		GradeTooHighException();
-	void		GradeTooLowException();
 };
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
+std::ostream& operator<<(std::ostream& os, Bureaucrat const& bureaucrat);
 
 #endif

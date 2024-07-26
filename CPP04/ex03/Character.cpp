@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 15:34:48 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/22 05:24:05 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2024/06/23 21:12:15 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,21 @@ Character::Character(void){
 
 Character::Character(std::string const &name){
 	_name = name;
-	//_iEquip = 0;
 	for(int k = 0; k < 4; k++){
 		_inv[k] = NULL;
 	}
+	//_iEquip = 0;
 }
 
 Character::Character(Character const &src){
 	
-	/*for (int k = 0; k < 4; k++){
-		if (src._inv[k] != NULL){
-			this->_inv[k] = src._inv[k];
-		} else {
-			this->_inv[k] = NULL;
-		}
-	}*/
+	// for (int k = 0; k < 4; k++){
+	// 	if (src._inv[k] != NULL){
+	// 		this->_inv[k] = src._inv[k];
+	// 	} else {
+	// 		this->_inv[k] = NULL;
+	// 	}
+	// }
 	*this = src;
 }
 
@@ -78,14 +78,17 @@ void Character::equip(AMateria* m)
 		return;
 	for (int k = 0; k < 4 ; k++)
 	{
-		if (_inv[k] == NULL)
+		//std::cout << "get_Type " << m->getType() <<std::endl;
+
+		if (this->_inv[k] == NULL)
 		{
-			_inv[k] = m;
-			std::cout << "The materia added to the location " << k << " of your inventory\n";
+			this->_inv[k] = m;
+			std::cout << "The materia " << m->getType() << " added to the location " << k << " of your inventory\n";
 			return;
 		}
 	}
 	std::cout << "The inventary is full" << std::endl;
+	//delete m;
 	
 	/*if (this->_iEquip < 4){
 		this->_inv[_iEquip] = m;
@@ -101,8 +104,10 @@ void Character::equip(AMateria* m)
 void Character::unequip(int idx) {
 	//std::cout <<"in unequi iEquip =" << _iEquip <<std::endl;
 	if (idx >= 0 && idx < 4){
-		if (_inv[idx] != NULL){
-			std::cout << "You just take off the materia \"" << this->_inv[idx]->getType() << "\" to the location " << idx << " of your inventory\n";;
+		if (this->_inv[idx] != NULL){
+			
+			std::cout << "You just take off the materia \"" << this->_inv[idx]->getType() << "\" to the location " << idx << " of your inventory\n";
+			delete this->_inv[idx];
 			this->_inv[idx] = NULL;
 		}
 		else{

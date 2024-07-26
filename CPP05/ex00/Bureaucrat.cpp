@@ -6,15 +6,23 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 18:45:26 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/07/25 23:32:15 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/07/26 18:08:43 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(){
-	this->grade = 150;
-	this->name = "default";
+Bureaucrat::Bureaucrat() : name("Default"), grade(150) {
+		std::cout << "Bureaucrat Default Constructor called" << std::endl;
+}
+
+Bureaucrat::Bureaucrat(const std::string n, int g) : name(n) {
+	if (g < 1)
+		throw Bureaucrat::GradeTooHighException();
+	if (g > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else
+		grade = g;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const & src)
@@ -31,7 +39,7 @@ Bureaucrat&	Bureaucrat::operator=(Bureaucrat const & rhs){
 	return *this;
 }
 Bureaucrat::~Bureaucrat(){
-	
+	std::cout << "Bureaucrat Destructor called" << std::endl;
 }
 
 std::string		Bureaucrat::getName(){
@@ -66,13 +74,7 @@ void	Bureaucrat::decGrade(){
 	}
 		
 }
-void	Bureaucrat::GradeTooHighException(){
-	
-}
-
-void	Bureaucrat::GradeTooLowException(){
-	
-}
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat){
-	os << bureaucrat.getName() << 
+	os << bureaucrat.getName() << ", bureaucrat grade "<<bureaucrat.getGrade()<<std::endl;
+    return os;
 }

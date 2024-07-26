@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 10:33:35 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/06/13 10:20:07 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/06/23 21:26:46 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ for (unsigned int k = 0; k < N / 2; k++){
 	animals[k] = new Dog();
 	animals[N / 2 + k] = new Cat();
 }
-    std::cout << "here" << std::endl;
+	std::cout << "here" << std::endl;
 	Dog tanc;
-    {
-        Dog tmp = tanc;
+	{
+		Dog tmp = tanc;
 		Dog free = Dog(tanc);
-    }
+	}
    
    std::cout << std::endl;
 
