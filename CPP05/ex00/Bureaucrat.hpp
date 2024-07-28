@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 18:30:49 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/07/26 18:06:59 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/07/28 20:50:27 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,6 @@
 # include <exception>
 
 class Bureaucrat{
-	class GradeTooHighException: public std::exception{
-		public:
-		virtual const char* what() const throw(){
-			return ("Grade too high !");
-		}
-	};
-	class GradeTooLowException: public std::exception{
-		public:
-		virtual const char* what() const throw(){
-			return ("Grade too low !");
-		}
-	};
 
 
 private:
@@ -42,10 +30,23 @@ public:
 	Bureaucrat&			operator=(Bureaucrat const & rhs);
 	virtual 			~Bureaucrat(void);
 	
-	std::string	getName();
-	int			getGrade();
+	const std::string	getName() const;
+	int			getGrade() const;
 	void		incGrade();
 	void		decGrade();
+	
+	class GradeTooHighException: public std::exception{
+		public:
+		virtual const char* what() const throw(){
+			return ("Exception : Grade too high !");
+		}
+	};
+	class GradeTooLowException: public std::exception{
+		public:
+		virtual const char* what() const throw(){
+			return ("Exception : Grade too low !");
+		}
+	};
 };
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat const& bureaucrat);

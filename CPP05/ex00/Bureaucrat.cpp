@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 18:45:26 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/07/26 18:08:43 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/07/28 20:44:43 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,15 @@ Bureaucrat::Bureaucrat(const std::string n, int g) : name(n) {
 		grade = g;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const & src)
+Bureaucrat::Bureaucrat(Bureaucrat const & src): name(src.getName()) 
 {
+	std::cout << "Bureaucrat Copy Constructor called" << std::endl;
 	*this = src;
 }
 
-Bureaucrat&	Bureaucrat::operator=(Bureaucrat const & rhs){
+Bureaucrat&	Bureaucrat::operator=(Bureaucrat const & rhs) {
+	std::cout << "Bureaucrat Copy Assignement called" << std::endl;
 	if (this != &rhs){
-		this->name = rhs.getName();
 		this->grade = rhs.getGrade();
 		
 	}
@@ -42,39 +43,41 @@ Bureaucrat::~Bureaucrat(){
 	std::cout << "Bureaucrat Destructor called" << std::endl;
 }
 
-std::string		Bureaucrat::getName(){
+const std::string		Bureaucrat::getName() const {
 	return (this->name);
 }
 
-int				Bureaucrat::getGrade(){
+int				Bureaucrat::getGrade() const {
 	return this->grade;
 }
 
 void	Bureaucrat::incGrade(){
-	try{
-		if (grade == 1)
-		{
-			throw "No increment is possible" ;
-		}
+	if (grade == 1)
+	{
+		throw Bureaucrat::GradeTooHighException();
 	}
-	catch(const std::out_of_range& e) {
-		std::cout << "Out of range exception: " << e.what() << std::endl;
+	else {
+		std::cout << "INCREMENT" << std::endl;
+		this->grade--;
+		std::cout << "grade : " << this->grade << std::endl;
 	}
+
+}
+void	Bureaucrat::decGrade() {
+	if (grade == 150)
+	{
+		throw Bureaucrat::GradeTooLowException();
+	}
+	else{
+		std::cout<< "DECREMENT" << std::endl;
+		this->grade ++;
+		std::cout << "grade : " << this->grade << std::endl;
+	}
+	
 		
 }
-void	Bureaucrat::decGrade(){
-	try{
-		if (grade == 150)
-		{
-			throw "No decrement is possible" ;
-		}
-	}
-	catch(const std::out_of_range& e) {
-		std::cout << "Out of range exception: " << e.what() << std::endl;
-	}
-		
-}
+
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat){
-	os << bureaucrat.getName() << ", bureaucrat grade "<<bureaucrat.getGrade()<<std::endl;
+	os << bureaucrat.getName() << ", bureaucrat grade "<< bureaucrat.getGrade() << std::endl;
     return os;
 }
