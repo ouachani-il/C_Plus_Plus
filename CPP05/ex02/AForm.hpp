@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 20:57:02 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/07/29 15:09:11 by ilouacha         ###   ########.fr       */
+/*   Created: 2024/07/29 19:39:18 by ilouacha          #+#    #+#             */
+/*   Updated: 2024/07/29 19:42:50 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include <iostream>
 # include <exception>
 # include "Bureaucrat.hpp"
 
-class Form {
+class AForm {
 private:
 	const std::string	_name;
 	bool				_signed;
@@ -25,11 +25,11 @@ private:
 	const int 			minExecGrade;
 public:
 	
-	Form(void);
-	Form(const std::string n, const int minEG, const int minSG);
-	Form(Form const & src);
-	Form&			operator=(Form const & rhs);
-	virtual 			~Form(void);
+	AForm(void);
+	AForm(const std::string n, const int minEG, const int minSG);
+	AForm(AForm const & src);
+	AForm&			operator=(AForm const & rhs);
+	virtual 			~AForm(void);
 
 	//Fonction membre
 	void	beSigned(class Bureaucrat const& B);
@@ -55,6 +55,6 @@ public:
 	
 };
 
-std::ostream&	operator<<(std::ostream& os, Form const&f);
+std::ostream&	operator<<(std::ostream& os, AForm const&f);
 
 #endif

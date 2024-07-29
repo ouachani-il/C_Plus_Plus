@@ -6,11 +6,12 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 18:45:26 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/07/29 10:48:46 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/07/29 15:20:11 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include <iostream>
 
 Bureaucrat::Bureaucrat() : name("Default"), grade(150) {
 		std::cout << "Bureaucrat Default Constructor called" << std::endl;
@@ -73,9 +74,23 @@ void	Bureaucrat::decGrade() {
 		this->grade ++;
 		std::cout << "grade : " << this->grade << std::endl;
 	}
+	
+		
 }
+
+void		Bureaucrat::signForm(Form& f){
+	try {
+		f.beSigned(*this);
+		std::cout << this->name << " signed " << f.getName() << std::endl;
+	}
+	catch (const std::exception& e){
+		std::cout << this->name << " coudn't sign " << f.getName() << " because " << e.what() << std::endl;
+	}
+	
+}
+
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat){
 	os << bureaucrat.getName() << ", bureaucrat grade "<< bureaucrat.getGrade() << std::endl;
-    return os;
+	return os;
 }
