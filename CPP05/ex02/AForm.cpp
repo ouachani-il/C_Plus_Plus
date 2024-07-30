@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/29 19:45:51 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/07/29 19:47:27 by ilouacha         ###   ########.fr       */
+/*   Created: 2024/07/30 11:11:02 by ilouacha          #+#    #+#             */
+/*   Updated: 2024/07/30 18:22:57 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ AForm::AForm(const std::string n, const int minSG, const int minEG) :
 		minSignGrade(minSG), 
 		minExecGrade(minEG) {
 	// assign the min grade to sign
+	std::cout << "AForm parametric Constructor called" << std::endl;
 	if (minSG < 1)
 		throw AForm::GradeTooHighException();
 	else if (minSG > 150)

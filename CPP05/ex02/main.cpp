@@ -6,91 +6,75 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 20:00:19 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/07/29 15:37:42 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/07/30 18:04:08 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
-
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-	try {
-		Bureaucrat	Bur1("Bur1", 155);
-	}
-	catch(const std::exception& e) {
-		std::cout << e.what() <<std::endl;
-	}
-
-
-	try {
-		Bureaucrat Bur2("Bur2", 0);
-	}
-	catch(const std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
+	//// BUREAUCRAT
+   std::cout << "*****Create Bureaucrat*****" << std::endl;
+	Bureaucrat B1("Bureaucrat_1", 1);
+	Bureaucrat B2("Bureaucrat_2", 149);
 	std::cout << std::endl;
 
-	Bureaucrat Bur3("Bur3", 150);
-	Bureaucrat Bur4("Bur4", 1);
- 
-	
-	std::cout<<Bur4;
-	
-	try{
-		std::cout << "Increment B4" << std::endl;
-		Bur4.incGrade();
-	}
-	catch(const std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
-	
-	std::cout << std::endl;
-	
-	std::cout<<Bur3;
-	
-	try {
-		std::cout << "Decrement Bur3" << std::endl;
-		Bur3.decGrade();
-	}
-
-	catch(const std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
+	//// SHRUBERRY FORM
+	std::cout << "*****Create ShruberryForm*****" << std::endl;
+	ShrubberyCreationForm s_form;
 	std::cout << std::endl;
 
-	//Testing ex01
-
-	Form	form1("Form 1", 7, 12);
+	std::cout << "*****Not Signed Form*****" << std::endl;
 	
-	//incorrect
-	std::cout << "//// Not Signed///////" << std::endl;
-	Bureaucrat	B("B", 150);
-	B.signForm(form1);
+	B2.executeForm(s_form);
+	std::cout << std::endl;
+	std::cout << "*****Shruberry Grade Too Low*****" << std::endl;
+	B1.signForm(s_form);
+	B2.executeForm(s_form);
+	std::cout << "*****Signed Form*****" << std::endl;
+	B1.executeForm(s_form);
 	std::cout << std::endl;
 
-	//correct
-	std::cout << "//// Signed///////" << std::endl;
-	Bureaucrat	Bc("Bc", 5);
-	Bc.signForm(form1);
+	//// ROBOTOMY FORM
+	std::cout << "*****Create RobotomyForm*****" << std::endl;
+	RobotomyRequestForm r_form;
 	std::cout << std::endl;
 
-	//affichage form
-
-	std::cout <<form1;
-	
-	//Form copy by constructor
-	std::cout << "Form copy by constructor" << std::endl;
-	Form	form2(form1);
-	std::cout <<form2;
-
-	// Form copy by assignement
-	std::cout << "Form copy by assignement" << std::endl;
-	Form	form3 = form2;
-	
+	std::cout << "*****Not Signed Form*****" << std::endl;
+  
+	B2.executeForm(r_form);
 	std::cout << std::endl;
-	// surcharge << form
-	std::cout <<form3;
-	
+
+	std::cout << "*****Signed Form (50/100 Success)*****" << std::endl;
+	B1.signForm(r_form);
+
+	std::cout << "*****Robotomy Grade Too Low*****" << std::endl;
+	B2.executeForm(r_form);
+	std::cout << "*****Signed Form (50/100 Success)*****" << std::endl;
+	B1.executeForm(r_form);
+
+	std::cout << std::endl;
+
+	//// PRESIDENTION FORM
+	std::cout << "*****Create PresidentialForm*****" << std::endl;
+	PresidentialPardonForm p_form;
+	std::cout << std::endl;
+
+	std::cout << "*****Not Signed Form*****" << std::endl;
+	B2.executeForm(p_form);
+	std::cout << std::endl;
+
+	B1.signForm(p_form);
+	std::cout << "*****Presidential Grade Too Low*****" << std::endl;
+	B2.executeForm(p_form);
+	std::cout << "*****Signed Form*****" << std::endl;
+	B1.executeForm(p_form);
+	std::cout << std::endl;
+	return (0);
 }
