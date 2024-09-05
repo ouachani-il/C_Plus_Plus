@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 20:00:19 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/07/29 15:37:42 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/08/01 17:30:44 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,53 +16,54 @@
 
 int main()
 {
-	try {
-		Bureaucrat	Bur1("Bur1", 155);
-	}
-	catch(const std::exception& e) {
-		std::cout << e.what() <<std::endl;
-	}
+	// try {
+	// 	Bureaucrat	Bur1("Bur1", 155);
+	// }
+	// catch(const std::exception& e) {
+	// 	std::cout << e.what() <<std::endl;
+	// }
 
 
-	try {
-		Bureaucrat Bur2("Bur2", 0);
-	}
-	catch(const std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << std::endl;
+	// try {
+	// 	Bureaucrat Bur2("Bur2", 0);
+	// }
+	// catch(const std::exception& e) {
+	// 	std::cout << e.what() << std::endl;
+	// }
+	// std::cout << std::endl;
 
-	Bureaucrat Bur3("Bur3", 150);
-	Bureaucrat Bur4("Bur4", 1);
+	// Bureaucrat Bur3("Bur3", 150);
+	// Bureaucrat Bur4("Bur4", 1);
  
 	
-	std::cout<<Bur4;
+	// std::cout<<Bur4;
 	
-	try{
-		std::cout << "Increment B4" << std::endl;
-		Bur4.incGrade();
-	}
-	catch(const std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
+	// try{
+	// 	std::cout << "Increment B4" << std::endl;
+	// 	Bur4.incGrade();
+	// }
+	// catch(const std::exception& e) {
+	// 	std::cout << e.what() << std::endl;
+	// }
 	
-	std::cout << std::endl;
+	// std::cout << std::endl;
 	
-	std::cout<<Bur3;
+	// std::cout<<Bur3;
 	
-	try {
-		std::cout << "Decrement Bur3" << std::endl;
-		Bur3.decGrade();
-	}
+	// try {
+	// 	std::cout << "Decrement Bur3" << std::endl;
+	// 	Bur3.decGrade();
+	// }
 
-	catch(const std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << std::endl;
+	// catch(const std::exception& e) {
+	// 	std::cout << e.what() << std::endl;
+	// }
+	// std::cout << std::endl;
 
 	//Testing ex01
 
 	Form	form1("Form 1", 7, 12);
+	std::cout <<form1;
 	
 	//incorrect
 	std::cout << "//// Not Signed///////" << std::endl;

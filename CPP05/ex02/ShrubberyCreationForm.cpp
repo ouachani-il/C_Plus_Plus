@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 11:13:19 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/07/30 18:03:52 by ilouacha         ###   ########.fr       */
+/*   Updated: 2024/08/01 17:51:07 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,16 @@ void ShrubberyCreationForm::execute( Bureaucrat const & executor) const {
 		if (!file) {
 			throw fileNotOpened();
 		}
-		file << "	    _-_" << std::endl;
-		file << "	 /~~       ~~\\ " << std::endl;
+		file << "        _-_" << std::endl;
+		file << "   /~~       ~~\\ " << std::endl;
 		file << "  /~~         ~~\\ " << std::endl;
 		file << " {               }" << std::endl;
-		file << " 	\\  _-     -_  /" << std::endl;
+		file << "   \\  _-     -_  /" << std::endl;
 		file << "   ~  \\ //  ~" << std::endl;
 		file << "_- -   | | _- _" << std::endl;
 		file << "_   -  | |   -_" << std::endl;
-		file << "		// \\" << std::endl;
+		file << "      // \\\\" << std::endl;
 		file << std::endl;
-		std::cout << "Executed by " << executor.getName() << std::endl;
+		std::cout << "Executed by " << executor.getName()<<std::endl;
 	}
 }	
