@@ -26,7 +26,7 @@ void Converter::set_arg(const std::string &str) {
   this->type_ = UNDETERMINED;
 }
 
-e_type Converter::get_type(void) const { return this->type_; }
+in_type Converter::get_type(void) const { return this->type_; }
 
 // Functions
 void Converter::determine_type_(void) {
