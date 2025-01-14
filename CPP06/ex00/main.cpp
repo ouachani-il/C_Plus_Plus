@@ -10,14 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConvert.hpp"
-#include <iomanip>
-#include <ios>
-int main(int argc, char **argv) {
-  if (argc == 2)
-    ScalarConvert::converter(argv[1]);
-  else
-    std::cout << "Undefined behavior" << std::endl;
+#include "Converter.hpp"
 
-  return 0;
+int main(int argc, char **argv) {
+	if (argc == 2){
+		std::string str = argv[1];
+	
+		Converter converter = Converter();
+		converter.set_arg(str);
+		converter.print_conversions();
+	}
+	else{
+		std::cout << "Usage: [./converter <char, int, float or double>]" << std::endl;
+	}
+	return 0;
 }

@@ -10,13 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME	= Converter
+
 SRCS	= $(shell find . -name "*.cpp")
 
 OBJS	= ${SRCS:.cpp=.o}
 
 HEADERS = $(shell find . -name "*.hpp")
 
-NAME	= ScalarConvert
 
 CC		= c++
 
