@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "A.hpp"
-#include "Base.hpp"
-#include "B.hpp"
 #include <stdlib.h>
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
 #include "C.hpp"
 
 Base * generate(void)
