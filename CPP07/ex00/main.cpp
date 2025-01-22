@@ -6,12 +6,12 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 11:53:45 by ilouacha          #+#    #+#             */
-/*   Updated: 2025/01/22 12:19:12 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/01/22 12:27:51 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Templates.hpp"
+#include "Whatever.hpp"
 
 int	main( void ) {
 	int a = 2;

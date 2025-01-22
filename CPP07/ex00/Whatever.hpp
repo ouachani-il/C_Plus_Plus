@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Templates.hpp                                      :+:      :+:    :+:   */
+/*   Whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 12:15:13 by ilouacha          #+#    #+#             */
-/*   Updated: 2025/01/22 12:17:50 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/01/22 12:30:13 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
+
 #include <iostream>
+#include <cstdlib>
 
 template<typename T>
-void    swap(T const & a, T const & b){
+void    swap(T & a, T & b){
 	T	temp;
 
-	temp = b
+	temp = b;
 	b = a;
 	a = temp;
 	return ;
 }
 
 template<typename T>
-T const &	max(T const & a, T const & b){
+T &	max(T & a, T & b){
 	return ( a > b ? a : b );
 }
 
 template<typename T>
-T const &	min(T const & a, T const & b){
+T &	min(T & a, T & b){
 	return (  a < b ? a : b );
 }
+#endif
 
