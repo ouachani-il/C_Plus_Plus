@@ -6,27 +6,40 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:31:57 by ilouacha          #+#    #+#             */
-/*   Updated: 2025/02/12 12:03:52 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/02/12 19:45:15 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
+
 #include <iostream>
 #include <cstdlib>
+#include <new>
+#include <exception>
 
 template <typename T>
 class Array {
-    Public : 
+    public: 
         Array();
-        Array(size_t n);
+        Array(unsigned int n);
         Array(Array const & src);
         Array & operator=(Array const & rhs);
-        T&  operator[](size_t index);
+        T&  operator[](unsigned int index);
         ~Array();
-        size_t    size() const;
+        unsigned int    size() const;
+        class OutOfRangeException : public std::exception
+        {
+            public :
+            const char * what() const throw()
+            {
+                return ("Element is out of range of array");
+            }
+        };
         
-    Private:
+    private:
         T*   data;
-        size_t    _n;
+        unsigned int    _n;
     
 };
 
@@ -35,7 +48,7 @@ Array<T>::Array() : data(NULL), _n(0){
     	std::cout << "Default Constructor called" << std::endl;
 }
 template<typename T>
-Array<T>::Array(size_t n) : data(NULL), _n(n) {
+Array<T>::Array(unsigned int n) : data(NULL), _n(n) {
     std::cout << "param Constructor called" << std::endl;
     if (n > 0){
         data = new T[n];
@@ -44,20 +57,40 @@ Array<T>::Array(size_t n) : data(NULL), _n(n) {
     }
 }
 template<typename T>
-Array<T>::Array(Array const & src){
+Array<T>::Array(Array const & src) : data(NULL), _n(0) {
     std::cout << " Copy Constructor called" << std::endl;
-    this = new Array<T>(other._n);
     *this = src;
 
 }
 template<typename T>
-Array & Array<T>::operator=(Array const & rhs){
-    
+Array<T> & Array<T>::operator=(Array const & rhs){
+    std::cout << "Copy assignment operator called" << std::endl;
+    if (this->_n >= 0 )
+        delete [] this->data;
+    data = new T[rhs._n];
+    _n = rhs._n;
+    for (size_t i = 0; i < this->_n; i++){
+        data[i] = rhs.data[i];
+    }
+    return (*this);
 }
 template<typename T>
 Array<T>::~Array(){
     delete[]    data;
 }
-size_t    Array::size() const{
+template<typename T>
+unsigned int    Array<T>::size() const{
     
 }
+
+
+template<typename T>
+T& Array<T>::operator[](unsigned int index){
+        if ((unsigned int)index >= this->_n) 
+            throw OutOfRangeException();
+        if ((int)index < 0) 
+            throw OutOfRangeException();
+        return this->data[index];
+}
+
+#endif
