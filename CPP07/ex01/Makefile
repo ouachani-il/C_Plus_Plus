@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/12/17 14:11:03 by ilouacha          #+#    #+#              #
-#    Updated: 2025/01/24 17:30:37 by ilouacha         ###   ########.fr        #
+#    Created: 2025/01/22 12:24:54 by ilouacha          #+#    #+#              #
+#    Updated: 2025/02/12 10:29:07 by ilouacha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	= $(shell find . -name "*.cpp")
 
-OBJS	= ${SRCS:.cpp=.o}
-
 HEADERS = $(shell find . -name "*.hpp")
 
-NAME	= serializer
+OBJS	= ${SRCS:.cpp=.o}
+
+NAME	= iter
 
 CC		= c++
 
@@ -29,7 +29,7 @@ RM		= rm -rf
 
 all:	$(NAME)
 
-$(NAME): ${OBJS} ${HEADERS}
+$(NAME): ${OBJS} ${HEADERS}	
 		${CC} ${CFLAGS} ${OBJS}  -o ${NAME}
 
 clean:	

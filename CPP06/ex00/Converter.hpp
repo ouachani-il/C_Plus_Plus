@@ -3,52 +3,38 @@
 
 #include <iostream>
 #include <string>
-#include <climits>
-#include <limits>
 #include <cmath>
 #include <iomanip>
+#include <cctype>
+#include <cstdlib>
+#include <cstdio>
+#include <cmath>
+#include <ios>
+#include <climits>
+#include <limits>
 
-enum in_type {
-	UNDETERMINED,
-	INVALID,
-	CHAR,
-	INT,
-	FLOAT,
-	DOUBLE,
-	NAN_,
-	INF
-};
+class Converter
+{
+    private:
 
-class Converter {
-	public:
-  		Converter();
-  		Converter(const Converter &src);
+    Converter();
+    Converter (Converter const &src);
+    Converter &operator=(Converter const &rhs);
+    ~Converter();
+    
+    
+    public:
 
-  		Converter &operator=(const Converter &rhs);
+    static void convert(std::string const &str); 
 
-  		~Converter();
+    static void write_char(char c);
+    static void write_float(double f , std::string str);
+    static void write_double(double d , std:: string str);
 
-  		// Getters & Setters
-  		std::string get_arg(void) const;
-  		void set_arg(const std::string &str);
-		in_type get_type(void) const;
 
-  		// Functions
-  		void print_conversions(void);
 
- 	private:
-  		std::string _arg;
-		in_type	_type;
+    
 
-		//functions
-		void 	_determine_type(void);
-		void 	_determine_int_double_float(std::string str);
-		void 	_print_conv_char(void) const;
-		void 	_print_conv_int(void) const;
-		void 	_print_conv_double(void) const;
-		void 	_print_conv_float(void) const;
-		void 	_print_conv_nan(void) const;
-		void 	_print_conv_inf(void) const;
 };
 
 #endif

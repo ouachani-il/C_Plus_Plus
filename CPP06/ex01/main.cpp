@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 14:15:00 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/12/17 14:15:21 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/01/24 18:11:26 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int main()
 	Data *check  = Serializer::deserialize(ptr);
 	std::cout<< check->i << std::endl<<check->j<<std::endl;
 	if (Serializer::deserialize(ptr) == data)
-			std::cout <<"same"<<std::endl;
+			std::cout <<"They are the same"<<std::endl;
 	else
-		std::cout<< "not the same"<<std::endl;
+		std::cout<< "They are the not the same"<<std::endl;
 
 
 	delete data;

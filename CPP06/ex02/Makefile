@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/12/17 14:11:03 by ilouacha          #+#    #+#              #
-#    Updated: 2025/01/24 17:30:37 by ilouacha         ###   ########.fr        #
+#    Created: 2025/01/24 17:31:30 by ilouacha          #+#    #+#              #
+#    Updated: 2025/01/24 17:59:05 by ilouacha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJS	= ${SRCS:.cpp=.o}
 
 HEADERS = $(shell find . -name "*.hpp")
 
-NAME	= serializer
+NAME	= identifingType
 
 CC		= c++
 

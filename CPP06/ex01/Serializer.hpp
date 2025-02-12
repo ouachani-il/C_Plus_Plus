@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 14:16:19 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/12/17 14:16:41 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/01/24 17:29:34 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class Serializer
 
 	private:
 		Serializer();
-		Serializer(const Serializer &other);
-		Serializer &operator= (const Serializer &other);
+		Serializer(const Serializer &src);
+		Serializer &operator= (const Serializer &rhs);
 		~Serializer();
 
 };

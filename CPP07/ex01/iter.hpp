@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 14:05:23 by ilouacha          #+#    #+#             */
-/*   Updated: 2025/01/24 13:28:41 by ilouacha         ###   ########.fr       */
+/*   Created: 2025/02/12 10:16:05 by ilouacha          #+#    #+#             */
+/*   Updated: 2025/02/12 11:53:07 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Converter.hpp"
+#ifndef ITER_HPP
+# define ITER_HPP
+# include <iostream>
+# include <cstdlib>
 
-int main(int argc, char **argv) {
-  if (argc == 2)
-    Converter::convert(argv[1]);
-  else
-    std::cout << "Undefined behavior" << std::endl;
-
-  return 0;
+template <typename T, typename Func>
+void    iter(T* array, size_t len, Func f){
+    for (size_t i = 0; i < len; i++){
+        f(array[i]);
+    }
 }
+
+template <typename T>
+void printElement(T& x) {
+    std::cout << x << std::endl;
+}
+
+#endif

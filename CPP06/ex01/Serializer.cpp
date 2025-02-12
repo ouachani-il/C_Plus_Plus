@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 14:15:41 by ilouacha          #+#    #+#             */
-/*   Updated: 2024/12/17 14:16:06 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/01/24 17:29:47 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@
 
 Serializer::Serializer()
 {
-	std::cout << "Default Constructor" << std::endl;
+	std::cout << "Default Serializer Constructor" << std::endl;
 }
-Serializer::Serializer(const Serializer &other)
+Serializer::Serializer(const Serializer &src)
 {
-	*this = other;
-	std::cout << "Copy Constructor" << std::endl;
+	*this = src;
+	std::cout << "Copy Serializer Constructor" << std::endl;
 }
-Serializer &Serializer::operator= (const Serializer &other)
+Serializer &Serializer::operator= (const Serializer &rhs)
 {
-	(void) other;
-	std::cout << "Copy Assignement" << std::endl;
+	(void) rhs;
+	std::cout << "Copy Serializer Assignement" << std::endl;
 	return *this;
 }
 Serializer::~Serializer()
 {
-	std::cout << "Default Destructor" << std::endl;
+	std::cout << "Default Serializer Destructor" << std::endl;
 }
 
 uintptr_t Serializer::serialize(Data* ptr)
