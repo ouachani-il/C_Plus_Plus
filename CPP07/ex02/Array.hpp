@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:31:57 by ilouacha          #+#    #+#             */
-/*   Updated: 2025/02/12 19:45:15 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:19:08 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ class Array {
         Array(unsigned int n);
         Array(Array const & src);
         Array & operator=(Array const & rhs);
+        Array const operator=(Array const & rhs) const;
         T&  operator[](unsigned int index);
+        T const  operator[](unsigned int index) const;
         ~Array();
         unsigned int    size() const;
         class OutOfRangeException : public std::exception
@@ -60,10 +62,20 @@ template<typename T>
 Array<T>::Array(Array const & src) : data(NULL), _n(0) {
     std::cout << " Copy Constructor called" << std::endl;
     *this = src;
-
 }
 template<typename T>
 Array<T> & Array<T>::operator=(Array const & rhs){
+    std::cout << "Copy assignment operator called" << std::endl;
+    if (this->_n >= 0 )
+        delete [] this->data;
+    data = new T[rhs._n];
+    _n = rhs._n;
+    for (size_t i = 0; i < this->_n; i++){
+        data[i] = rhs.data[i];
+    }
+    return (*this);
+}
+Array<T> const  Array<T>::operator=(Array const & rhs)const{
     std::cout << "Copy assignment operator called" << std::endl;
     if (this->_n >= 0 )
         delete [] this->data;
@@ -80,7 +92,7 @@ Array<T>::~Array(){
 }
 template<typename T>
 unsigned int    Array<T>::size() const{
-    
+    return this->_n;
 }
 
 

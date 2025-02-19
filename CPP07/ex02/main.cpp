@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:31:26 by ilouacha          #+#    #+#             */
-/*   Updated: 2025/02/12 19:44:00 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:29:18 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ int main(int, char**)
     //SCOPE
     {
         Array<int> tmp = numbers;
-        Array<int> test(tmp);
+        Array<int> const test(tmp);
+
+        test[2]
     }
 
     for (int i = 0; i < MAX_VAL; i++)
