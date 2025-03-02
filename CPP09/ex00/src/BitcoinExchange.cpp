@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 11:10:31 by ilham_oua         #+#    #+#             */
-/*   Updated: 2025/03/01 22:12:20 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2025/03/02 11:45:13 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ std::map <std::string, double> const &  BitcoinExchange::getPrices() const{
     return _prices;
 }
 bool    BitcoinExchange::isValidFormat(std::string const & date_in) const{
-    if (isdigit(date_in))
+    //if (isdigit(date_in))
 }
 void    BitcoinExchange::InputLineProcessing(std::string const & ln){
     
