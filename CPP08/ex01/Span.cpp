@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 15:51:31 by ilouacha          #+#    #+#             */
-/*   Updated: 2025/02/25 20:57:41 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/02/28 21:20:09 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void    Span::addNumber(int x){
     }
     else {
         throw over_size();
+        return ;
     }
     
 } //shortest distance between the numbers stacked
@@ -50,7 +51,7 @@ int     Span::shortestSpan(){
         std::sort(_tab.begin(), _tab.end());
         int min_dist = std::numeric_limits<int>::max();
         std::vector<int>::iterator it;
-        for (it = _tab.begin(); it < _tab.end(); ++it ){
+        for (it = _tab.begin() + 1; it < _tab.end(); it++ ){
             min_dist = std::min(min_dist, *it - *(it-1));
         }
         return (min_dist);
@@ -74,6 +75,7 @@ void    Span::addNumbers(std::vector<int>::const_iterator begin,
     std::vector<int>::const_iterator end){
         if (_tab.size() + std::distance(begin, end) > _N){
             throw over_size();
+            return ;
         }
         _tab.insert(_tab.end(), begin, end);
     }
