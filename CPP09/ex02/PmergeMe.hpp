@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 15:08:39 by ilouacha          #+#    #+#             */
-/*   Updated: 2025/03/05 16:52:23 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/03/07 12:41:47 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,33 @@
 
 class PmergeMe{
     private:
-        std::vector<int>    _vector;
-        std::deque<int>     _deque;
-
+        std::vector<unsigned int>    _vector;
+        std::deque<unsigned int>     _deque;
+        long    _last;
+        
+        std::vector<std::pair<unsigned int, unsigned int> >  _vecPairs;
+        std::vector<std::pair<unsigned int, unsigned int> >   _deqPairs;
         
     public:
     // construtor in canonical form
-        PmergeMe(std::vector<int> const & input_integers);
+        PmergeMe(std::vector<unsigned int> const & input_integers);
         PmergeMe(PmergeMe const & src);
         PmergeMe&   operator=(PmergeMe const & rhs);
         ~PmergeMe();
     
     // Setters and getters
-        void    setVect(std::vector<int> const &newVect);
-        void    setDeq(std::deque<int> const &newDeq);
-        std::vector<int>    getVect();
-        std::deque<int>    getDeq();
+        void    setVect(std::vector<unsigned int> const &newVect);
+        void    setDeq(std::deque<unsigned int> const &newDeq);
+        std::vector<unsigned int>    getVect();
+        std::deque<unsigned int>    getDeq();
 
     //  Ford & Jonhson sorting algorithm
-        void    FordJonhsonAlg(std::vector<int>& vect);
-        void    fordJonhsonAlg(std::vector<int>& deq);
+        void    sortingAlgVec();
+        void    sortingAlgDeq();
+        
+    // Making pairs for each of the vector and the deque containers
+        void    makePairsVec();
+        void    makePairsDeq();
         
 };
 #endif
