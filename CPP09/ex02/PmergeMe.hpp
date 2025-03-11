@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 15:08:39 by ilouacha          #+#    #+#             */
-/*   Updated: 2025/03/07 12:41:47 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/03/11 11:31:36 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ class PmergeMe{
     // Making pairs for each of the vector and the deque containers
         void    makePairsVec();
         void    makePairsDeq();
+
+    // Displaying the results
+    template <typename T>    
+    void    sortDisplay(const T& containers) const;
         
 };
 #endif

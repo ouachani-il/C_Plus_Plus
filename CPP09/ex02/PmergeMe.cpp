@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 16:40:36 by ilouacha          #+#    #+#             */
-/*   Updated: 2025/03/07 13:01:32 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/03/11 11:31:45 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,13 @@ void    PmergeMe::makePairsDeq(){
         }
         _deqPairs.push_back(p);
     }}
+
+template <typename T>    
+void    PmergeMe::sortDisplay(const T& containers) const
+{
+    typename T::const_iterator it;
+    for (it = containers.begin(); it != containers.end(); ++it)
+        std::cout << *it << " ";
+    std::cout<<std::endl;
+}
 
