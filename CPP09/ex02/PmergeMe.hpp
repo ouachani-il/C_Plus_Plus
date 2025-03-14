@@ -6,51 +6,61 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 15:08:39 by ilouacha          #+#    #+#             */
-/*   Updated: 2025/03/11 11:31:36 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/03/14 15:44:20 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PMERGEME_HPP
 #define PMERGEME_HPP
 
-#include <ctime>
-#include <vector>
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
 #include <deque>
+#include <vector>
+#include <iterator>
+#include <list>
+#include <sstream>
+#include <cmath>
+#include <ctime>
 
-
-class PmergeMe{
-    private:
-        std::vector<unsigned int>    _vector;
-        std::deque<unsigned int>     _deque;
-        long    _last;
-        
-        std::vector<std::pair<unsigned int, unsigned int> >  _vecPairs;
-        std::vector<std::pair<unsigned int, unsigned int> >   _deqPairs;
-        
+// a template for the container, to adapt the sorting algorithm for both of the containers chosen to do it.
+template <typename Container>
+class PmergeMe {
+    Container container;
     public:
-    // construtor in canonical form
-        PmergeMe(std::vector<unsigned int> const & input_integers);
-        PmergeMe(PmergeMe const & src);
+        typedef typename Container::value_type ValueType;
+        typedef typename Container::iterator Iterator;
+        
+        
+        // construtor in canonical form
+        PmergeMe();
+        PmergeMe(int argc, char **argv);
+        /*PmergeMe(PmergeMe const & src);
         PmergeMe&   operator=(PmergeMe const & rhs);
-        ~PmergeMe();
+        ~PmergeMe();*/
+        
+        typename Container::iterator begin();
+        typename Container::iterator end();
+        
+        void    sorting();
+        void    sort_time();
+
+    private:
+        time_t  _start;
+        time_t  _end;
+        
+        float   time();
+        int     Jacobsthal(int i);
+        bool    hasDoubles(std::vector<int>& set);
+        void    insert(Container &main, Container &pend, ValueType odd, Container &left, Container &vec, bool is_odd, int order);
+        void    sorting(Container & vec);
+        std::string container_type();
     
-    // Setters and getters
-        void    setVect(std::vector<unsigned int> const &newVect);
-        void    setDeq(std::deque<unsigned int> const &newDeq);
-        std::vector<unsigned int>    getVect();
-        std::deque<unsigned int>    getDeq();
-
-    //  Ford & Jonhson sorting algorithm
-        void    sortingAlgVec();
-        void    sortingAlgDeq();
-        
-    // Making pairs for each of the vector and the deque containers
-        void    makePairsVec();
-        void    makePairsDeq();
-
-    // Displaying the results
-    template <typename T>    
-    void    sortDisplay(const T& containers) const;
-        
 };
+// surcherge d'operateur << pour l'affichage du contenu du container
+template <typename Container>
+std::ostream& operator<<(std::ostream &os, const PmergeMe<Container> &obj);
+#include "PmergeMe.tpp"
 #endif
