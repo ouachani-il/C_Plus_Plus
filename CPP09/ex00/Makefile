@@ -5,39 +5,39 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/03/01 10:54:02 by ilham_oua         #+#    #+#              #
-#    Updated: 2025/03/01 10:54:03 by ilham_oua        ###   ########.fr        #
+#    Created: 2025/03/02 10:52:34 by ilouacha          #+#    #+#              #
+#    Updated: 2025/03/14 20:38:40 by ilham_oua        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+SRCS	= $(shell find . -name "*.cpp")
 
-NAME	= btc
+HEADERS = $(shell find . -name "*.hpp")
+
+OBJS	= ${SRCS:.cpp=.o}
+
+NAME	=  BitcoinExchange
 
 CC		= c++
 
-HEADERS	= ./includes/BitcoinExchange.hpp 
+CFLAGS	= -Wall -Werror -Wextra -std=c++98 -g
 
-CFLAGS	= -g -std=c++98 -Wextra -Werror -Wall 
+RM		= rm -rf
 
-SRCS	= main.cpp \
-	./srcs/BitcoinExchange.cpp 
+.cpp.o:
+		${CC} ${CFLAGS} -c $< -o ${<:.cpp=.o}
 
-OBJS	= $(SRCS:.cpp=.o)
+all:	$(NAME)
 
-all:$(NAME)
+$(NAME): ${OBJS} ${HEADERS}	
+		${CC} ${CFLAGS} ${OBJS}  -o ${NAME}
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
-%.o: %.cpp $(HEADERS)
-	$(CC) -c $(CFLAGS) $< -o $@
-	
-clean:
-	rm -f $(OBJS)
+clean:	
+		${RM} ${OBJS}
 
 fclean: clean
-	rm -f $(NAME)
+		${RM} ${NAME}
 
-re: fclean all
+re:		fclean all
 
-.PHONY: re clean fclean
+.PHONY: all re clean fclean

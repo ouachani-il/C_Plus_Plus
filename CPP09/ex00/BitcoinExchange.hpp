@@ -34,7 +34,7 @@ class BitcoinExchange {
         void    loadPrices(std::string const & filename);
         std::map <std::string, double> const &  getPrices() const;
         bool    isValidFormat(std::string const & date_in) const;
-        void    InputLineProcessing(std::string const & ln);
+        void    InputLineProcessing(std::string const & line);
         
 };
 
