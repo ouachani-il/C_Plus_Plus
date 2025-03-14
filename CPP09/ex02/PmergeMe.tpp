@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 12:34:11 by ilouacha          #+#    #+#             */
-/*   Updated: 2025/03/14 15:50:04 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/03/14 15:58:08 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,50 @@ PmergeMe<Container>::PmergeMe(int argc, char **argv){
         throw std::runtime_error("Error: doubles are detected.");        
 
 }
+/**
+ * this is extracted form the ysalm work
+ * 
+ */
+template <typename Container>
+PmergeMe<Container>::PmergeMe(char **av){
+    std::string args_string ;
+    for (int i = 1 ;av[i] ;i++){
+        args_string += av[i] ;
+        if(av[i] != NULL)
+            args_string += " ";   
+    }
+    std::istringstream ss(args_string);
+    ValueType  n;
+    while(ss >> n){
+        if (std::find(container.begin(), container.end(), n) != container.end())
+            throw std::runtime_error("Duplicate value detected");
+       container.push_back(n);
+       }
+    if(container.size() != count_word_and_check(args_string))
+        throw "bad trip";
+}
 
+template <typename Container>
+size_t PmergeMe<Container>::count_word_and_check(std::string &str){
+    int w = 0;
+    for(int i = 0 ; str[i] != '\0' ; i++)
+    {
+        if(str[i] != ' ' && str[i] != '\0'){
+            w++;
+            while(str[i] != ' ' && str[i] != '\0')
+            {
+                if(!std::isdigit( str[i]) && str[i] != '+')
+                    throw "bad trip";
+                i++;
+            }
+        }
+    }
+    return w;
+}
+/**
+ * 
+ * end of Yaslam work
+ */
 template <typename Container>
 bool    PmergeMe<Container>::hasDoubles(std::vector<int>& set){
     std::vector<int>    vect; // the vector where to put the unique elements
