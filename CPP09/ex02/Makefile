@@ -6,32 +6,38 @@
 #    By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/02 10:52:34 by ilouacha          #+#    #+#              #
-#    Updated: 2025/03/14 15:32:24 by ilouacha         ###   ########.fr        #
+#    Updated: 2025/03/18 13:40:01 by ilouacha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Target = PmergeMe
+SRCS	= $(shell find . -name "*.cpp")
 
-CC = c++
+HEADERS = $(shell find . -name "*.hpp")
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
+OBJS	= ${SRCS:.cpp=.o}
 
-FILES = main.cpp
+NAME	=  PmergeMe
 
-objects = $(FILES:.cpp=.o)
+CC		= c++
 
-$(Target): $(objects)
-	$(CC) $(FLAGS) -o $(Target) $(objects)
+CFLAGS	= -Wall -Werror -Wextra -std=c++98 -g
 
-%.o: %.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+RM		= rm -rf
 
-.PHONY: clean fclean re
+.cpp.o:
+		${CC} ${CFLAGS} -c $< -o ${<:.cpp=.o}
 
-clean:
-	rm -f $(objects)
+all:	$(NAME)
+
+$(NAME): ${OBJS} ${HEADERS}	
+		${CC} ${CFLAGS} ${OBJS}  -o ${NAME}
+
+clean:	
+		${RM} ${OBJS}
 
 fclean: clean
-	rm -f $(Target)
+		${RM} ${NAME}
 
-re: fclean $(Target)
+re:		fclean all
+
+.PHONY: all re clean fclean
