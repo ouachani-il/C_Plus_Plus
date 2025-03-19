@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 15:08:39 by ilouacha          #+#    #+#             */
-/*   Updated: 2025/03/18 15:12:54 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/03/19 14:55:31 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,33 @@
 #include <vector>
 #include <iterator>
 #include <list>
+#include <utility>
 #include <sstream>
 #include <cmath>
 #include <ctime>
+#include <stdexcept>
 
-// a template for the container, to adapt the sorting algorithm for both of the containers chosen to do it.
+class DuplicateValueException : public std::exception {
+    public:
+        const char* what() const throw() {
+            return "Error: Duplicate value detected";
+        }
+    };
+    
+class BadInputException : public std::exception {
+public:
+    const char* what() const throw() {
+        return "Error: Bad input detected";
+    }
+};
+
+class InvalidNumberException : public std::exception {
+public:
+    const char* what() const throw() {
+        return "Error: Invalid number detected";
+    }
+};
+    
 class PmergeMe {
     public:
     
@@ -36,36 +58,43 @@ class PmergeMe {
     PmergeMe&   operator=(PmergeMe const & rhs);
     ~PmergeMe();
     
-    std::vector<unsigned int>   getVector() const;
-    std::deque<unsigned int>    getDeque() const;
-        
+    std::vector<unsigned int>    getVector() const;
+    std::deque<unsigned int>     getDeque() const;
+
     void    parsing(int ac, char **av);
-    void    sorting();
-    void    sort_timeV();
-    void    sort_timeD();
     void    print_results(int ac, char **av);
-    int     binary_search(std::vector<unsigned int > &vecteur, unsigned int b);
+    // Ford-Johnson sort function
+    void    fordJohnson(std::vector<unsigned int>& vec);
+    void    fordJohnson(std::deque<unsigned int>& deq);
+    void    printPairs(std::vector<std::pair<unsigned int, unsigned int> >& pairs);
+    void    printPairs(std::deque<std::pair<unsigned int, unsigned int> >& pairs);
+    void    print_fjSequence(std::vector<unsigned int>& s, unsigned int b_size);
+    void    print_fjSequence(std::deque<unsigned int>& s, unsigned int b_size);
+    static double getElapsedTime(const std::clock_t start, const std::clock_t end);
+    
         
     private:
+        //int err;
         std::vector<unsigned int>    _Vector;
         std::deque<unsigned int>     _Deque;
-        time_t  _startV;
-        time_t  _endV;
-        time_t  _startD;
-        time_t  _endD;
         
-        float   timeV();
-        float   timeD();
-        int     Jacobsthal(int i);
-        // vector sorting
-        void    insert(std::vector<unsigned int> &main, std::vector<unsigned int> &pend, unsigned int odd, std::vector<unsigned int> &left, 
-                    std::vector<unsigned int> &vec, bool is_odd, unsigned int order);
-        void    sorting(std::vector<unsigned int> & vec);
-        // Deque sorting
-        void    insert(std::deque<unsigned int> &main, std::deque<unsigned int> &pend, unsigned int odd, std::deque<unsigned int> &left, 
-                    std::deque<unsigned int> &vec, bool is_odd, unsigned int order);
-        void    sorting(std::deque<unsigned int> & vec);
+        std::vector<std::pair<unsigned int, unsigned int> > createPairs(std::vector<unsigned int>& elements);
+        std::deque<std::pair<unsigned int, unsigned int> > createPairs(std::deque<unsigned int>& elements);
+
         size_t  count_word_and_check(std::string &str) const;
+
+        void mergeSort(std::vector<std::pair<unsigned int, unsigned int> >& pairs, unsigned int left, unsigned int right);
+        void mergeSort(std::deque<std::pair<unsigned int, unsigned int> >& pairs, unsigned int left, unsigned int right);
+
+        void merge(std::vector<std::pair<unsigned int, unsigned int> >& pairs, unsigned int left, unsigned int mid, unsigned int right);
+        void merge(std::deque<std::pair<unsigned int, unsigned int> >& pairs, unsigned int left, unsigned int mid, unsigned int right);
+
+        void insertUncools(std::vector<unsigned int>& mainChain, std::vector<unsigned int>& b);
+        void insertUncools(std::deque<unsigned int>& mainChain, std::deque<unsigned int>& b);
+
+        void binarySearch(std::vector<unsigned int>& sortedVec, unsigned int value);
+        void binarySearch(std::deque<unsigned int>& sortedDeq, unsigned int value);
+        //*********************************************** */
     
 };
 
@@ -74,6 +103,5 @@ std::ostream& operator<<(std::ostream &os, std::vector<unsigned int> & obj);
 std::ostream& operator<<(std::ostream &os, std::deque<unsigned int> & obj);
 
 
-//A la palce d'upper_bound, il faudrait utiliser binary search !
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilham_oua <ilham_oua@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 21:07:18 by ilham_oua         #+#    #+#             */
-/*   Updated: 2025/03/14 21:41:49 by ilham_oua        ###   ########.fr       */
+/*   Updated: 2025/03/19 15:37:49 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(int argc, char **argv)
     }
 
     std::string input_filename = argv[1];
-    std::string data_base = "./input/data.csv";
+    std::string data_base = "./input_files/data.csv";
 
     BitcoinExchange btc;
     btc.loadPrices(data_base);

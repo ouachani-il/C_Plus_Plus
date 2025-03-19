@@ -6,7 +6,7 @@
 /*   By: ilouacha <ilouacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 15:54:40 by ilouacha          #+#    #+#             */
-/*   Updated: 2025/03/19 14:52:34 by ilouacha         ###   ########.fr       */
+/*   Updated: 2025/03/18 13:43:43 by ilouacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,17 @@
 
 int main(int argc, char **argv){
     try{
-        if (argc >= 2){
+        if (argc > 2){
             PmergeMe object;
+
             object.print_results(argc , argv);
-        }else{
-            throw BadInputException();
-            //std::cerr <<"Error : wrong number of arguments"<<std::endl;
-            //return 1;
+                }
+        else{
+            throw "Error: bad inputs.";
         }
     }
-    catch(const std::exception& e){
-        std::cerr << e.what() << std::endl;
-        //return 1;
-    }
-    catch (...) {  
-        std::cerr << "Bad trip !" << std::endl;
+    catch(...){
+        std::cerr << "Error: bad trip " << std::endl;
     }
     return 0;
 }
